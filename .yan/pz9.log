@@ -1,0 +1,31 @@
+✖ [8924/8924] Building FermatFLT._probeZ (12s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\_probeZ.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeZ.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeZ.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\_probeZ.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\_probeZ.setup.json --json
+error: FermatFLT/_probeZ.lean:13:2: Tactic `apply` failed: could not unify the conclusion of `@Int.cast_pow`
+  ↑(?n ^ ?m) = ↑?n ^ ?m
+with the goal
+  ↑i ^ m = ↑i ^ m
+
+Note: The full type of `@Int.cast_pow` is
+  ∀ {R : Type ?u.24} [inst : Ring R] (n : ℤ) (m : ℕ), ↑(n ^ m) = ↑n ^ m
+
+n : ℕ
+inst✝ : Fact (Nat.Prime n)
+i : ℤ
+m : ℕ
+⊢ ↑i ^ m = ↑i ^ m
+error: FermatFLT/_probeZ.lean:19:2: Tactic `apply` failed: could not unify the conclusion of `@Nat.cast_pow`
+  ↑(?m ^ ?n) = ↑?m ^ ?n
+with the goal
+  ↑i ^ m = ↑i ^ m
+
+Note: The full type of `@Nat.cast_pow` is
+  ∀ {α : Type ?u.23} [inst : Semiring α] (m n : ℕ), ↑(m ^ n) = ↑m ^ n
+
+n i m : ℕ
+⊢ ↑i ^ m = ↑i ^ m
+error: FermatFLT/_probeZ.lean:21:0: Invalid `end`: There is no current scope to end
+
+Note: Scopes are introduced using `namespace` and `section`
+Some required targets logged failures:
+- FermatFLT._probeZ
+error: build failed

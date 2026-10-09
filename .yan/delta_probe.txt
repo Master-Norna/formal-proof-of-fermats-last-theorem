@@ -1,0 +1,1 @@
+done, odd-valuation hits (q != 2,3,p): 0

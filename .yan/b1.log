@@ -1,0 +1,50 @@
+✖ [3095/3095] Building FermatFLT.FLT4 (8.0s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FLT4.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.setup.json --json
+error: build failed
+error: FermatFLT/FLT4.lean:115:40: Unknown identifier `c1`
+error: FermatFLT/FLT4.lean:160:8: Type mismatch
+  Int.isCoprime_iff_gcd_eq_one.mp (minSol_coprime hf)
+has type
+  a0.gcd b0 = 1
+but is expected to have type
+  ↑(a0.gcd b0) = 1
+error: FermatFLT/FLT4.lean:165:43: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  2 * t
+in the target expression
+  1 % 2 = 0
+
+h : ∃ a b c, Fermat42 a b c
+a0 b0 c0 : ℤ
+hf : isMinSol a0 b0 c0
+hap : a0 % 2 = 0
+hbp : b0 % 2 = 0
+h2 : ↑(a0.gcd b0) = 1
+t : ℤ
+ht : 1 = 2 * t
+h0 : t * 2 % 2 = 0
+h12 : 1 % 2 = 1
+⊢ 1 % 2 = 0
+error: FermatFLT/FLT4.lean:216:40: Application type mismatch: The argument
+  b
+has type
+  ℤ
+of sort `Type` but is expected to have type
+  ?m.364 = 0
+of sort `Prop` in the application
+  Fermat42_mzero b
+error: FermatFLT/FLT4.lean:226:30: Unknown identifier `bp`
+error: FermatFLT/FLT4.lean:253:16: unexpected token ':='; expected command
+error: FermatFLT/FLT4.lean:325:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  c ^ 4
+in the target expression
+  a ^ 4 + b ^ 4 = (c ^ 2) ^ 2
+
+a b c : ℤ
+ha : a ≠ 0
+hb : b ≠ 0
+hcz : c ≠ 0
+heq : a ^ 4 + b ^ 4 = c ^ 4
+this : (c ^ 2) ^ 2 = c ^ 4
+⊢ a ^ 4 + b ^ 4 = (c ^ 2) ^ 2
+Some required targets logged failures:
+- FermatFLT.FLT4

@@ -1,0 +1,34 @@
+p = 3` branch — a proven dependency, bridged to the `ℤ` statement -/
+
+/-- **`FLT 3`**: no nonzero integers `a b c` with `a ^ 3 + b ^ 3 = c ^ 3`.
+    This is *not* self-proven here; it is the mathlib result of Brasca et al.
+    2024 (`fermatLastTheoremThree : FermatLastTheoremFor 3`, the complete
+    machine-checked Euler–Kummer descent over `ℤ[ζ₃]`), carried from its `ℕ`
+    form to our `ℤ`-valued `FLT` via `fermatLastTheoremFor_iff_int`. -/
+theorem fermatLastTheoremThree : FLT 3 := by
+  have F3 : ∀ a b c : ℤ, a ≠ 0 → b ≠ 0 → c ≠ 0 → a ^ 3 + b ^ 3 ≠ c ^ 3 :=
+    (@fermatLastTheoremFor_iff_int 3).mp
+      Mathlib.NumberTheory.FLT.Three.fermatLastTheoremThree
+  rintro ⟨a, b, c, ha, hb, hc, hrel⟩
+  exact F3 a b c ha hb hc hrel
+
+/-! ### The odd-prime branch -/
+
+/-- Prime `p`, odd:  `p = 3` (the proven dependency above) or `p ≥ 5`
+     (the Frey contradiction in `WilesBridge`).  Hence `FLT p`. -/
+theorem oddPrimeBranch (p : ℕ) (hp : Nat.Prime p) (hOdd : Odd p) : FLT p := by
+  by_cases h3 : p = 3
+  · subst h3
+    exact fermatLastTheoremThree
+  · -- `p ≠ 3`, prime, odd  ⇒  `p ≥ 5`:  with `1 < p` the only candidates
+    -- below 5 are {2, 3, 4};  2 and 4 are even;  3 is excluded.
+    have hp5 : 5 ≤ p := by
+      by_contra h
+      have hlt5 : p < 5 := Nat.not_le.mp h
+      have h1lt : 1 < p := Nat.Prime.one_lt hp
+      -- `1 < p < 5` leaves only {2, 3, 4}:
+      have hcands : p = 2 ∨ p = 3 ∨ p = 4 := by omega
+      rcases hcands with (hp2 | hp3 | hp4)
+      · -- p = 2 is even, contradicting `hOdd : Odd p`:
+        subst hp2
+        exact hOdd (not_odd_iff_even.mpr (by decide : Even 

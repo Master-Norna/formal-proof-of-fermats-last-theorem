@@ -1,0 +1,5 @@
+⚠ [8924/8924] Built FermatFLT.FermatLittle (137s)
+warning: FermatFLT/FermatLittle.lean:121:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Build completed successfully (8924 jobs).

@@ -1,0 +1,24 @@
+✖ [3098/3098] Building FermatFLT.WilesBridge (9.0s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\WilesBridge.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\WilesBridge.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\WilesBridge.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\WilesBridge.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\WilesBridge.setup.json --json
+error: FermatFLT/WilesBridge.lean:405:13: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+error: FermatFLT/WilesBridge.lean:398:78: unsolved goals
+p : ℕ
+hp : Nat.Prime p
+hp5 : 5 ≤ p
+a✝ b✝ c✝ : ℤ
+ha✝ : a✝ ≠ 0
+hb✝ : b✝ ≠ 0
+hc✝ : c✝ ≠ 0
+hrel✝ : a✝ ^ p + b✝ ^ p = c✝ ^ p
+a b c : ℤ
+ha : a ≠ 0
+hb : b ≠ 0
+hc : c ≠ 0
+hab : a.gcd b = 1
+hac : a.gcd c = 1
+hbc : b.gcd c = 1
+hrel : a ^ p + b ^ p = c ^ p
+⊢ False
+Some required targets logged failures:
+- FermatFLT.WilesBridge
+error: build failed

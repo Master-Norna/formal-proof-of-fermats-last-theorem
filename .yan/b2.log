@@ -1,0 +1,6 @@
+✖ [2/2] Building FermatFLT.FermatLittle (562ms)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FermatLittle.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.setup.json --json
+error: FermatFLT/FermatLittle.lean:23:0: invalid 'import' command, it must be used in the beginning of the file
+Some required targets logged failures:
+- FermatFLT.FermatLittle
+error: build failed

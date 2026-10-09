@@ -1,0 +1,307 @@
+✖ [3098/3098] Building FermatFLT.WilesBridge (9.9s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\WilesBridge.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\WilesBridge.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\WilesBridge.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\WilesBridge.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\WilesBridge.setup.json --json
+error: FermatFLT/WilesBridge.lean:218:70: unexpected token '/--'; expected 'lemma'
+error: FermatFLT/WilesBridge.lean:244:62: Application type mismatch: The argument
+  hceq
+has type
+  c ^ p = ↑q ^ p * (ai ^ p + bi ^ p)
+but is expected to have type
+  ↑q ^ p * (ai ^ p + bi ^ p) = c ^ p
+in the application
+  Dvd.intro (ai ^ p + bi ^ p) hceq
+error: FermatFLT/WilesBridge.lean:249:43: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:252:29: Unknown identifier `a`
+error: FermatFLT/WilesBridge.lean:252:66: Unknown identifier `ha0`
+error: FermatFLT/WilesBridge.lean:251:24: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hqb : q ∣ (↑q * bi).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * bi) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hceq : (↑q * ci) ^ p = ↑q ^ p * (ai ^ p + bi ^ p)
+hrel' : ai ^ p + bi ^ p = ci ^ p
+hi : ai = 0
+ha0 : sorry = 0
+⊢ False
+error: FermatFLT/WilesBridge.lean:254:29: Unknown identifier `b`
+error: FermatFLT/WilesBridge.lean:254:66: Unknown identifier `hb0`
+error: FermatFLT/WilesBridge.lean:253:24: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hqb : q ∣ (↑q * bi).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * bi) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hceq : (↑q * ci) ^ p = ↑q ^ p * (ai ^ p + bi ^ p)
+hrel' : ai ^ p + bi ^ p = ci ^ p
+hai0 : ai ≠ 0
+hi : bi = 0
+hb0 : sorry = 0
+⊢ False
+error: FermatFLT/WilesBridge.lean:256:29: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:256:66: Unknown identifier `hc0`
+error: FermatFLT/WilesBridge.lean:255:24: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hqb : q ∣ (↑q * bi).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * bi) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hceq : (↑q * ci) ^ p = ↑q ^ p * (ai ^ p + bi ^ p)
+hrel' : ai ^ p + bi ^ p = ci ^ p
+hai0 : ai ≠ 0
+hbi0 : bi ≠ 0
+hi : ci = 0
+hc0 : sorry = 0
+⊢ False
+error: FermatFLT/WilesBridge.lean:258:43: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:263:26: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:282:10: Unknown constant `Int.sub_eq_of_add_eq`
+error: FermatFLT/WilesBridge.lean:286:62: Application type mismatch: The argument
+  hbeq
+has type
+  b ^ p = ↑q ^ p * (ci ^ p - ai ^ p)
+but is expected to have type
+  ↑q ^ p * (ci ^ p - ai ^ p) = b ^ p
+in the application
+  Dvd.intro (ci ^ p - ai ^ p) hbeq
+error: FermatFLT/WilesBridge.lean:292:12: Unknown identifier `b`
+error: FermatFLT/WilesBridge.lean:295:9: invalid 'calc' step, left-hand side is
+  ↑q ^ p * (ai ^ p + bi ^ p) : ℤ
+but is expected to be
+  (ai ^ p + bi ^ p) * ↑q ^ p : ℤ
+error: FermatFLT/WilesBridge.lean:300:7: invalid 'calc' step, right-hand side is
+  ci ^ p : ℤ
+but is expected to be
+  ci ^ p * ↑q ^ p : ℤ
+error: FermatFLT/WilesBridge.lean:299:29: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a + ?b + ?c
+in the target expression
+  ↑q ^ p * ai ^ p + (ci ^ p + -ai ^ p) = ↑q ^ p * ai ^ p + ci ^ p - ↑q ^ p * ai ^ p
+
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hqc : q ∣ (↑q * ci).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * ci) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hbeq : (↑q * bi) ^ p = ↑q ^ p * (ci ^ p - ai ^ p)
+hpow : ↑q ^ p * bi ^ p = ci ^ p - ai ^ p
+⊢ ↑q ^ p * ai ^ p + (ci ^ p + -ai ^ p) = ↑q ^ p * ai ^ p + ci ^ p - ↑q ^ p * ai ^ p
+error: FermatFLT/WilesBridge.lean:302:29: Unknown identifier `a`
+error: FermatFLT/WilesBridge.lean:302:66: Unknown identifier `ha0`
+error: FermatFLT/WilesBridge.lean:301:24: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hqc : q ∣ (↑q * ci).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * ci) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hbeq : (↑q * bi) ^ p = ↑q ^ p * (ci ^ p - ai ^ p)
+hrel' : ai ^ p + bi ^ p = ci ^ p
+hi : ai = 0
+ha0 : sorry = 0
+⊢ False
+error: FermatFLT/WilesBridge.lean:304:29: Unknown identifier `b`
+error: FermatFLT/WilesBridge.lean:304:66: Unknown identifier `hb0`
+error: FermatFLT/WilesBridge.lean:303:24: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hqc : q ∣ (↑q * ci).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * ci) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hbeq : (↑q * bi) ^ p = ↑q ^ p * (ci ^ p - ai ^ p)
+hrel' : ai ^ p + bi ^ p = ci ^ p
+hai0 : ai ≠ 0
+hi : bi = 0
+hb0 : sorry = 0
+⊢ False
+error: FermatFLT/WilesBridge.lean:306:29: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:306:66: Unknown identifier `hc0`
+error: FermatFLT/WilesBridge.lean:305:24: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+q : ℕ
+hq : Nat.Prime q
+ai : ℤ
+ha : ↑q * ai ≠ 0
+hqa : q ∣ (↑q * ai).natAbs
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hqc : q ∣ (↑q * ci).natAbs
+h0 : ¬(↑q * ai).gcd (↑q * ci) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hrel : (↑q * ai) ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+hbeq : (↑q * bi) ^ p = ↑q ^ p * (ci ^ p - ai ^ p)
+hrel' : ai ^ p + bi ^ p = ci ^ p
+hai0 : ai ≠ 0
+hbi0 : bi ≠ 0
+hi : ci = 0
+hc0 : sorry = 0
+⊢ False
+error: FermatFLT/WilesBridge.lean:307:43: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:311:26: Unknown identifier `c`
+error: FermatFLT/WilesBridge.lean:327:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?m.201 = ?m.202 - ?m.203
+in the target expression
+  a ^ p = ↑q ^ p * (ci ^ p - bi ^ p)
+
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+a : ℤ
+ha : a ≠ 0
+q : ℕ
+hq : Nat.Prime q
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hqb : q ∣ (↑q * bi).natAbs
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hqc : q ∣ (↑q * ci).natAbs
+hrel : ↑q ^ p * bi ^ p + a ^ p = ↑q ^ p * ci ^ p
+h0 : ¬(↑q * bi).gcd (↑q * ci) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+⊢ a ^ p = ↑q ^ p * (ci ^ p - bi ^ p)
+error: FermatFLT/WilesBridge.lean:315:59: unsolved goals
+p : ℕ
+hpp : Nat.Prime p
+hpp3 : 3 ≤ p
+a : ℤ
+ha : a ≠ 0
+q : ℕ
+hq : Nat.Prime q
+bi : ℤ
+hb : ↑q * bi ≠ 0
+hqb : q ∣ (↑q * bi).natAbs
+ci : ℤ
+hc : ↑q * ci ≠ 0
+hmin : ∀ (a1 b1 c1 : ℤ), a1 ≠ 0 → b1 ≠ 0 → c1 ≠ 0 → a1 ^ p + b1 ^ p = c1 ^ p → (↑q * ci).natAbs ≤ c1.natAbs
+hqc : q ∣ (↑q * ci).natAbs
+hrel : a ^ p + (↑q * bi) ^ p = (↑q * ci) ^ p
+h0 : ¬(↑q * bi).gcd (↑q * ci) = 1
+hp0 : p ≠ 0
+hq0 : ↑q ≠ 0
+haeq : a ^ p = ↑q ^ p * (ci ^ p - bi ^ p)
+⊢ False
+error: FermatFLT/WilesBridge.lean:328:20: unexpected identifier; expected command
+error: FermatFLT/WilesBridge.lean:363:23: Application type mismatch: The argument
+  p
+has type
+  ℕ
+of sort `Type` but is expected to have type
+  Nat.Prime ?m.147
+of sort `Prop` in the application
+  pMin_coprime p
+error: FermatFLT/WilesBridge.lean:364:18: Application type mismatch: The argument
+  p
+has type
+  ℕ
+of sort `Type` but is expected to have type
+  Nat.Prime ?m.153
+of sort `Prop` in the application
+  pMin_ac p
+error: FermatFLT/WilesBridge.lean:365:18: Application type mismatch: The argument
+  p
+has type
+  ℕ
+of sort `Type` but is expected to have type
+  Nat.Prime ?m.159
+of sort `Prop` in the application
+  pMin_bc p
+warning: FermatFLT/WilesBridge.lean:411:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+error: FermatFLT/WilesBridge.lean:411:2: `push Not` made no progress at `hF`
+error: FermatFLT/WilesBridge.lean:430:10: Unknown identifier `fermatLastTheoremThree`
+error: FermatFLT/WilesBridge.lean:435:23: Unknown constant `Nat.Prime.eq_two_or_odd_of_lt`
+error: FermatFLT/WilesBridge.lean:436:4: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Some required targets logged failures:
+- FermatFLT.WilesBridge
+error: build failed

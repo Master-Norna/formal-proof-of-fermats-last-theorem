@@ -1,0 +1,26 @@
+✖ [8924/8924] Building FermatFLT._probeZ (12s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\_probeZ.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeZ.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeZ.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\_probeZ.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\_probeZ.setup.json --json
+error: build failed
+error: FermatFLT/_probeZ.lean:9:40: failed to synthesize instance of type class
+  Fintype (ZMod p)ˣ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+warning: FermatFLT/_probeZ.lean:10:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: FermatFLT/_probeZ.lean:11:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+error: FermatFLT/_probeZ.lean:20:4: No goals to be solved
+Some required targets logged failures:
+- FermatFLT._probeZ

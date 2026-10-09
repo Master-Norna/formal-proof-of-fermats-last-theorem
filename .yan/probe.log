@@ -1,0 +1,23 @@
+✖ [8925/8925] Building FermatFLT._probeFL2 (321s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\_probeFL2.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeFL2.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeFL2.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\_probeFL2.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\_probeFL2.setup.json --json
+error: FermatFLT/_probeFL2.lean:7:7: Unknown identifier `card_units`
+info: FermatFLT/_probeFL2.lean:8:0: pow_card_eq_one.{u_1} {G : Type u_1} [Group G] [Fintype G] {x : G} : x ^ Fintype.card G = 1
+info: FermatFLT/_probeFL2.lean:9:0: pow_card_eq_one'.{u_6} {G : Type u_6} [Group G] {x : G} : x ^ Nat.card G = 1
+error: FermatFLT/_probeFL2.lean:10:7: Unknown constant `ZMod.natCast_dvd`
+error: FermatFLT/_probeFL2.lean:11:7: Unknown constant `ZMod.eq_zero_of_dvd`
+error: FermatFLT/_probeFL2.lean:12:7: Unknown constant `ZMod.intCast_dvd`
+error: FermatFLT/_probeFL2.lean:13:7: Unknown constant `ZMod.intCast_eq_zero`
+info: FermatFLT/_probeFL2.lean:14:0: Int.ModEq.dvd_iff {n a b : ℤ} (h : a ≡ b [ZMOD n]) : n ∣ a ↔ n ∣ b
+info: FermatFLT/_probeFL2.lean:15:0: Nat.ModEq.dvd_iff {m a b d : ℕ} (h : a ≡ b [MOD m]) (hdm : d ∣ m) : d ∣ a ↔ d ∣ b
+info: FermatFLT/_probeFL2.lean:16:0: Fintype.card.{u_3} (α : Type u_3) [Fintype α] : ℕ
+error: FermatFLT/_probeFL2.lean:18:62: Function expected at
+  pow_card_eq_one
+but this term has type
+  ?m.14 ^ Fintype.card ?m.11 = 1
+
+Note: Expected a function because this term is being applied to the argument
+  u
+error: FermatFLT/_probeFL2.lean:19:44: Unknown identifier `card_units`
+Some required targets logged failures:
+- FermatFLT._probeFL2
+error: build failed

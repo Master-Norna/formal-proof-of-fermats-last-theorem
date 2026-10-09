@@ -1,0 +1,301 @@
+FermatFLT/_probeZ.lean:11:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+FermatFLT/_probeZ.lean:12:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+FermatFLT/_probeZ.lean:14:2: error: Type mismatch
+  Nat.Prime.one_lt hp
+has type
+  1 < p
+but is expected to have type
+  p > 0
+FermatFLT/_probeZ.lean:19:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+FermatFLT/_probeZ.lean:21:2: error: Type mismatch
+  Nat.Prime.one_lt hp
+has type
+  1 < p
+but is expected to have type
+  p > 0
+[Meta.synthInstance] ✅️ Fintype (ZMod p)ˣ
+  [Meta.synthInstance] ✅️ new goal Fintype (ZMod p)ˣ
+    [Meta.synthInstance.instances] #[@SetLike.instFintype, @FinEnum.instFintype, @Unique.fintype, @CategoryTheory.FinCategory.fintypeObj, @instFintypeUnitsOfDecidableEq]
+  [Meta.synthInstance.apply] ✅️ apply @instFintypeUnitsOfDecidableEq to Fintype (ZMod p)ˣ
+    [Meta.synthInstance.tryResolve] ✅️ Fintype (ZMod p)ˣ ≟ Fintype (ZMod p)ˣ
+    [Meta.synthInstance] ✅️ new goal Fintype (ZMod p)
+      [Meta.synthInstance.instances] #[@SetLike.instFintype, @FinEnum.instFintype, @Unique.fintype, @CategoryTheory.FinCategory.fintypeObj, fintype]
+  [Meta.synthInstance.apply] ✅️ apply fintype to Fintype (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Fintype (ZMod p) ≟ Fintype (ZMod p)
+    [Meta.synthInstance] ✅️ new goal NeZero p
+      [Meta.synthInstance.instances] #[@NeZero.of_gt', @Invertible.toNeZero, Nat.AtLeastTwo.toNeZero, @Nat.instNeZeroSucc]
+  [Meta.synthInstance.apply] ❌️ apply @Nat.instNeZeroSucc to NeZero p
+    [Meta.synthInstance.tryResolve] ❌️ NeZero p ≟ NeZero (?m.18 + 1)
+  [Meta.synthInstance.apply] ✅️ apply Nat.AtLeastTwo.toNeZero to NeZero p
+    [Meta.synthInstance.tryResolve] ✅️ NeZero p ≟ NeZero p
+    [Meta.synthInstance] ✅️ new goal p.AtLeastTwo
+      [Meta.synthInstance.instances] #[Nat.instAtLeastTwoHAddOfNat]
+  [Meta.synthInstance.apply] ❌️ apply Nat.instAtLeastTwoHAddOfNat to p.AtLeastTwo
+    [Meta.synthInstance.tryResolve] ❌️ p.AtLeastTwo ≟ (?m.20 + 1).AtLeastTwo
+  [Meta.synthInstance.apply] ✅️ apply @Invertible.toNeZero to NeZero p
+    [Meta.synthInstance.tryResolve] ✅️ NeZero p ≟ NeZero p
+      [Meta.synthInstance] ✅️ MulZeroOneClass ℕ
+        [Meta.synthInstance] ✅️ new goal MulZeroOneClass ℕ
+          [Meta.synthInstance.instances] #[@MonoidWithZero.toMulZeroOneClass, @NonAssocSemiring.toMulZeroOneClass, @instMulZeroOneClassOfSemiring, Nat.instMulZeroOneClass]
+        [Meta.synthInstance.apply] ✅️ apply Nat.instMulZeroOneClass to MulZeroOneClass ℕ
+          [Meta.synthInstance.tryResolve] ✅️ MulZeroOneClass ℕ ≟ MulZeroOneClass ℕ
+          [Meta.synthInstance.answer] ✅️ MulZeroOneClass ℕ
+        [Meta.synthInstance] result Nat.instMulZeroOneClass
+    [Meta.synthInstance] ✅️ new goal Nontrivial ℕ
+      [Meta.synthInstance.instances] #[@IsStrictOrderedRing.toNontrivial, Infinite.instNontrivial, @IsSimpleGroup.toNontrivial, @IsSimpleAddGroup.toNontrivial, @IsSimpleRing.instNontrivial, @GroupWithZero.toNontrivial, @IsDomain.toNontrivial, @DivisionRing.toNontrivial, @instNontrivialOfCharZero, @LinearOrderedAddCommGroupWithTop.toNontrivial, @IsSimpleOrder.toNontrivial, @EuclideanDomain.toNontrivial, @IsLocalRing.toNontrivial, Nat.instNontrivial]
+  [Meta.synthInstance.apply] ✅️ apply Nat.instNontrivial to Nontrivial ℕ
+    [Meta.synthInstance.tryResolve] ✅️ Nontrivial ℕ ≟ Nontrivial ℕ
+    [Meta.synthInstance.answer] ✅️ Nontrivial ℕ
+  [Meta.synthInstance.resume] ✅️ propagating Nontrivial ℕ to subgoal Nontrivial ℕ of NeZero p
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance] ✅️ no instances for Invertible p
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @NeZero.of_gt' to NeZero p
+    [Meta.synthInstance.tryResolve] ✅️ NeZero p ≟ NeZero p
+    [Meta.synthInstance] ✅️ new goal Preorder ℕ
+      [Meta.synthInstance.instances] #[@PartialOrder.toPreorder, Nat.instPreorder]
+  [Meta.synthInstance.apply] ✅️ apply Nat.instPreorder to Preorder ℕ
+    [Meta.synthInstance.tryResolve] ✅️ Preorder ℕ ≟ Preorder ℕ
+    [Meta.synthInstance.answer] ✅️ Preorder ℕ
+  [Meta.synthInstance.resume] ✅️ propagating Preorder ℕ to subgoal Preorder ℕ of NeZero p
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance] ✅️ new goal IsBotZeroClass ℕ
+      [Meta.synthInstance.instances] #[@instIsBotZeroClass, @LinearOrderedCommMonoidWithZero.toIsBotZeroClass]
+  [Meta.synthInstance.apply] ✅️ apply @LinearOrderedCommMonoidWithZero.toIsBotZeroClass to IsBotZeroClass ℕ
+    [Meta.synthInstance.tryResolve] ✅️ IsBotZeroClass ℕ ≟ IsBotZeroClass ℕ
+      [Meta.synthInstance] ✅️ LinearOrderedCommMonoidWithZero ℕ
+        [Meta.synthInstance] ✅️ new goal LinearOrderedCommMonoidWithZero ℕ
+          [Meta.synthInstance.instances] #[@LinearOrderedCommGroupWithZero.toLinearOrderedCommMonoidWithZero, Nat.instLinearOrderedCommMonoidWithZero]
+        [Meta.synthInstance.apply] ✅️ apply Nat.instLinearOrderedCommMonoidWithZero to LinearOrderedCommMonoidWithZero ℕ
+          [Meta.synthInstance.tryResolve] ✅️ LinearOrderedCommMonoidWithZero ℕ ≟ LinearOrderedCommMonoidWithZero ℕ
+          [Meta.synthInstance.answer] ✅️ LinearOrderedCommMonoidWithZero ℕ
+        [Meta.synthInstance] result Nat.instLinearOrderedCommMonoidWithZero
+    [Meta.synthInstance.answer] ✅️ IsBotZeroClass ℕ
+  [Meta.synthInstance.resume] ✅️ propagating IsBotZeroClass ℕ to subgoal IsBotZeroClass ℕ of NeZero p
+    [Meta.synthInstance.resume] size: 2
+    [Meta.synthInstance] ✅️ new goal One ℕ
+      [Meta.synthInstance.instances] #[@UnitalShelf.toOne, @One.ofOfNat1, @GradedMonoid.GradeZero.one, @MulOne.toOne, @InvOneClass.toOne, @AddMonoidWithOne.toOne, Nat.instOne]
+  [Meta.synthInstance.apply] ✅️ apply Nat.instOne to One ℕ
+    [Meta.synthInstance.tryResolve] ✅️ One ℕ ≟ One ℕ
+    [Meta.synthInstance.answer] ✅️ One ℕ
+  [Meta.synthInstance.resume] ✅️ propagating One ℕ to subgoal One ℕ of NeZero p
+    [Meta.synthInstance.resume] size: 3
+    [Meta.synthInstance] ✅️ new goal Fact (1 < p)
+      [Meta.synthInstance.instances] #[Nat.Prime.one_lt', this]
+  [Meta.synthInstance.apply] ❌️ apply this to Fact (1 < p)
+    [Meta.synthInstance.tryResolve] ❌️ Fact (1 < p) ≟ Fact (Nat.Prime p)
+  [Meta.synthInstance.apply] ✅️ apply Nat.Prime.one_lt' to Fact (1 < p)
+    [Meta.synthInstance.tryResolve] ✅️ Fact (1 < p) ≟ Fact (1 < p)
+    [Meta.synthInstance] ✅️ new goal Fact (Nat.Prime p)
+      [Meta.synthInstance.instances] #[this]
+  [Meta.synthInstance.apply] ✅️ apply this to Fact (Nat.Prime p)
+    [Meta.synthInstance.tryResolve] ✅️ Fact (Nat.Prime p) ≟ Fact (Nat.Prime p)
+    [Meta.synthInstance.answer] ✅️ Fact (Nat.Prime p)
+  [Meta.synthInstance.resume] ✅️ propagating Fact (Nat.Prime p) to subgoal Fact (Nat.Prime p) of Fact (1 < p)
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ Fact (1 < p)
+  [Meta.synthInstance.resume] ✅️ propagating Fact (1 < p) to subgoal Fact (1 < p) of NeZero p
+    [Meta.synthInstance.resume] size: 5
+    [Meta.synthInstance.answer] ✅️ NeZero p
+  [Meta.synthInstance.resume] ✅️ propagating NeZero p to subgoal NeZero p of Fintype (ZMod p)
+    [Meta.synthInstance.resume] size: 6
+    [Meta.synthInstance.answer] ✅️ Fintype (ZMod p)
+  [Meta.synthInstance.resume] ✅️ propagating Fintype (ZMod p) to subgoal Fintype (ZMod p) of Fintype (ZMod p)ˣ
+    [Meta.synthInstance.resume] size: 7
+    [Meta.synthInstance] ✅️ new goal DecidableEq (ZMod p)
+      [Meta.synthInstance.instances] #[@decidableEq_of_subsingleton, @RCLike.toDecidableEq, @FunLike.toDecidableEq, @FinEnum.decEq, @LinearOrder.toDecidableEq, @FirstOrder.Language.instDecidableEqFunctions, @FirstOrder.Language.instDecidableEqRelations, decidableEq]
+  [Meta.synthInstance.apply] ✅️ apply decidableEq to DecidableEq (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Decidable (a = b) ≟ Decidable (a = b)
+    [Meta.synthInstance.answer] ✅️ DecidableEq (ZMod p)
+  [Meta.synthInstance.resume] ✅️ propagating DecidableEq (ZMod p) to subgoal DecidableEq (ZMod p) of Fintype (ZMod p)ˣ
+    [Meta.synthInstance.resume] size: 8
+    [Meta.synthInstance.answer] ✅️ Fintype (ZMod p)ˣ
+  [Meta.synthInstance] result instFintypeUnitsOfDecidableEq
+[Meta.synthInstance] ✅️ Monoid (ZMod p)
+  [Meta.synthInstance] ✅️ new goal Monoid (ZMod p)
+    [Meta.synthInstance.instances] #[@ESeminormedMonoid.toMonoid, @LeftCancelMonoid.toMonoid, @RightCancelMonoid.toMonoid, @GradedMonoid.GradeZero.monoid, @CommMonoid.toMonoid, @DivInvMonoid.toMonoid, @MonoidWithZero.toMonoid, @Semiring.toMonoid, MonTypeEquivalenceMon.monMonoid]
+  [Meta.synthInstance.apply] ✅️ apply MonTypeEquivalenceMon.monMonoid to Monoid (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Monoid (ZMod p) ≟ Monoid (ZMod p)
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.MonObj (ZMod p)
+      [Meta.synthInstance.instances] #[@CategoryTheory.GrpObj.toMonObj, @CategoryTheory.BimonObj.toMonObj, @CategoryTheory.RingObj.toMonObj]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.RingObj.toMonObj to CategoryTheory.MonObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.MonObj (ZMod p) ≟ CategoryTheory.MonObj (ZMod p)
+      [Meta.synthInstance] ✅️ CategoryTheory.CartesianMonoidalCategory Type
+        [Meta.synthInstance] ✅️ new goal CategoryTheory.CartesianMonoidalCategory Type
+          [Meta.synthInstance.instances] #[CategoryTheory.typesCartesianMonoidalCategory]
+        [Meta.synthInstance.apply] ✅️ apply CategoryTheory.typesCartesianMonoidalCategory to CategoryTheory.CartesianMonoidalCategory
+              Type
+          [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.CartesianMonoidalCategory
+                Type ≟ CategoryTheory.CartesianMonoidalCategory Type
+          [Meta.synthInstance.answer] ✅️ CategoryTheory.CartesianMonoidalCategory Type
+        [Meta.synthInstance] result CategoryTheory.typesCartesianMonoidalCategory
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.RingObj (ZMod p)
+      [Meta.synthInstance.instances] #[@CategoryTheory.CommRingObj.toRingObj]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.CommRingObj.toRingObj to CategoryTheory.RingObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.RingObj (ZMod p) ≟ CategoryTheory.RingObj (ZMod p)
+    [Meta.synthInstance] ✅️ no instances for CategoryTheory.CommRingObj (ZMod p)
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.BimonObj.toMonObj to CategoryTheory.MonObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.MonObj (ZMod p) ≟ CategoryTheory.MonObj (ZMod p)
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.BimonObj (ZMod p)
+      [Meta.synthInstance.instances] #[@CategoryTheory.HopfObj.toBimonObj]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.HopfObj.toBimonObj to CategoryTheory.BimonObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.BimonObj (ZMod p) ≟ CategoryTheory.BimonObj (ZMod p)
+    [Meta.synthInstance] ✅️ no instances for CategoryTheory.HopfObj (ZMod p)
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.GrpObj.toMonObj to CategoryTheory.MonObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.MonObj (ZMod p) ≟ CategoryTheory.MonObj (ZMod p)
+      [Meta.synthInstance] ✅️ CategoryTheory.CartesianMonoidalCategory Type
+        [Meta.synthInstance] result CategoryTheory.typesCartesianMonoidalCategory (cached)
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.GrpObj (ZMod p)
+      [Meta.synthInstance.instances] #[@CategoryTheory.Preadditive.instGrpObj, @CategoryTheory.CommGrpObj.toGrpObj]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.CommGrpObj.toGrpObj to CategoryTheory.GrpObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.GrpObj (ZMod p) ≟ CategoryTheory.GrpObj (ZMod p)
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.CommGrpObj (ZMod p)
+      [Meta.synthInstance.instances] #[@CategoryTheory.CommGrpObj.mk]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.CommGrpObj.mk to CategoryTheory.CommGrpObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.CommGrpObj (ZMod p) ≟ CategoryTheory.CommGrpObj (ZMod p)
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.BraidedCategory Type
+      [Meta.synthInstance.instances] #[@CategoryTheory.SymmetricCategory.toBraidedCategory, CategoryTheory.instBraidedCategoryType]
+  [Meta.synthInstance.apply] ✅️ apply CategoryTheory.instBraidedCategoryType to CategoryTheory.BraidedCategory Type
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.BraidedCategory Type ≟ CategoryTheory.BraidedCategory Type
+    [Meta.synthInstance.answer] ✅️ CategoryTheory.BraidedCategory Type
+  [Meta.synthInstance.resume] ✅️ propagating CategoryTheory.BraidedCategory
+        Type to subgoal CategoryTheory.BraidedCategory Type of CategoryTheory.CommGrpObj (ZMod p)
+    [Meta.synthInstance.resume] size: 1
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.Preadditive.instGrpObj to CategoryTheory.GrpObj (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.GrpObj (ZMod p) ≟ CategoryTheory.GrpObj (ZMod p)
+    [Meta.synthInstance] ✅️ new goal CategoryTheory.Preadditive Type
+      [Meta.synthInstance.instances] #[@CategoryTheory.Abelian.toPreadditive]
+  [Meta.synthInstance.apply] ✅️ apply @CategoryTheory.Abelian.toPreadditive to CategoryTheory.Preadditive Type
+    [Meta.synthInstance.tryResolve] ✅️ CategoryTheory.Preadditive Type ≟ CategoryTheory.Preadditive Type
+    [Meta.synthInstance] ✅️ no instances for CategoryTheory.Abelian Type
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @Semiring.toMonoid to Monoid (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Monoid (ZMod p) ≟ Monoid (ZMod p)
+    [Meta.synthInstance] ✅️ new goal Semiring (ZMod p)
+      [Meta.synthInstance.instances] #[@DivisionSemiring.toSemiring, @Ring.toSemiring, @CommSemiring.toSemiring, @IdemSemiring.toSemiring]
+  [Meta.synthInstance.apply] ✅️ apply @IdemSemiring.toSemiring to Semiring (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Semiring (ZMod p) ≟ Semiring (ZMod p)
+    [Meta.synthInstance] ✅️ new goal IdemSemiring (ZMod p)
+      [Meta.synthInstance.instances] #[@IdemCommSemiring.toIdemSemiring, @KleeneAlgebra.toIdemSemiring]
+  [Meta.synthInstance.apply] ✅️ apply @KleeneAlgebra.toIdemSemiring to IdemSemiring (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ IdemSemiring (ZMod p) ≟ IdemSemiring (ZMod p)
+    [Meta.synthInstance] ✅️ no instances for KleeneAlgebra (ZMod p)
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @IdemCommSemiring.toIdemSemiring to IdemSemiring (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ IdemSemiring (ZMod p) ≟ IdemSemiring (ZMod p)
+    [Meta.synthInstance] ✅️ no instances for IdemCommSemiring (ZMod p)
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @CommSemiring.toSemiring to Semiring (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Semiring (ZMod p) ≟ Semiring (ZMod p)
+    [Meta.synthInstance] ✅️ new goal CommSemiring (ZMod p)
+      [Meta.synthInstance.instances] #[@CommRing.toCommSemiring, @Semifield.toCommSemiring, @IdemCommSemiring.toCommSemiring]
+  [Meta.synthInstance.apply] ✅️ apply @IdemCommSemiring.toCommSemiring to CommSemiring (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CommSemiring (ZMod p) ≟ CommSemiring (ZMod p)
+    [Meta.synthInstance] ✅️ no instances for IdemCommSemiring (ZMod p)
+      [Meta.synthInstance.instances] #[]
+  [Meta.synthInstance.apply] ✅️ apply @Semifield.toCommSemiring to CommSemiring (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ CommSemiring (ZMod p) ≟ CommSemiring (ZMod p)
+    [Meta.synthInstance] ✅️ new goal Semifield (ZMod p)
+      [Meta.synthInstance.instances] #[@Field.toSemifield]
+  [Meta.synthInstance.apply] ✅️ apply @Field.toSemifield to Semifield (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Semifield (ZMod p) ≟ Semifield (ZMod p)
+    [Meta.synthInstance] ✅️ new goal Field (ZMod p)
+      [Meta.synthInstance.instances] #[@NormedField.toField, littleWedderburn, instField]
+  [Meta.synthInstance.apply] ✅️ apply instField to Field (ZMod p)
+    [Meta.synthInstance.tryResolve] ✅️ Field (ZMod p) ≟ Field (ZMod p)
+    [Meta.synthInstance] ✅️ new goal Fact (Nat.Prime p)
+      [Meta.synthInstance.instances] #[this]
+  [Meta.synthInstance.apply] ✅️ apply this to Fact (Nat.Prime p)
+    [Meta.synthInstance.tryResolve] ✅️ Fact (Nat.Prime p) ≟ Fact (Nat.Prime p)
+    [Meta.synthInstance.answer] ✅️ Fact (Nat.Prime p)
+  [Meta.synthInstance.resume] ✅️ propagating Fact (Nat.Prime p) to subgoal Fact (Nat.Prime p) of Field (ZMod p)
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ Field (ZMod p)
+  [Meta.synthInstance.resume] ✅️ propagating Field (ZMod p) to subgoal Field (ZMod p) of Semifield (ZMod p)
+    [Meta.synthInstance.resume] size: 2
+    [Meta.synthInstance.answer] ✅️ Semifield (ZMod p)
+  [Meta.synthInstance.resume] ✅️ propagating Semifield (ZMod p) to subgoal Semifield (ZMod p) of CommSemiring (ZMod p)
+    [Meta.synthInstance.resume] size: 3
+    [Meta.synthInstance.answer] ✅️ CommSemiring (ZMod p)
+  [Meta.synthInstance.resume] ✅️ propagating CommSemiring (ZMod p) to subgoal CommSemiring (ZMod p) of Semiring (ZMod p)
+    [Meta.synthInstance.resume] size: 4
+    [Meta.synthInstance.answer] ✅️ Semiring (ZMod p)
+  [Meta.synthInstance.resume] ✅️ propagating Semiring (ZMod p) to subgoal Semiring (ZMod p) of Monoid (ZMod p)
+    [Meta.synthInstance.resume] size: 5
+    [Meta.synthInstance.answer] ✅️ Monoid (ZMod p)
+  [Meta.synthInstance] result Field.toSemifield.toMonoid
+[Meta.synthInstance] ✅️ HSub ℕ ℕ ℕ
+  [Meta.synthInstance] ✅️ new goal HSub ℕ ℕ _tc.1
+    [Meta.synthInstance.instances] #[@instHSub]
+  [Meta.synthInstance.apply] ✅️ apply @instHSub to HSub ℕ ℕ ℕ
+    [Meta.synthInstance.tryResolve] ✅️ HSub ℕ ℕ ℕ ≟ HSub ℕ ℕ ℕ
+    [Meta.synthInstance] ✅️ new goal Sub ℕ
+      [Meta.synthInstance.instances] #[@Lean.Grind.AddCommGroup.toSub, @Lean.Grind.Ring.toSub, @SubNegMonoid.toSub, instSubNat]
+  [Meta.synthInstance.apply] ✅️ apply instSubNat to Sub ℕ
+    [Meta.synthInstance.tryResolve] ✅️ Sub ℕ ≟ Sub ℕ
+    [Meta.synthInstance.answer] ✅️ Sub ℕ
+  [Meta.synthInstance.resume] ✅️ propagating Sub ℕ to subgoal Sub ℕ of HSub ℕ ℕ ℕ
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ HSub ℕ ℕ ℕ
+  [Meta.synthInstance] result instHSub
+[Meta.synthInstance] ✅️ HSub ℕ ℕ ℕ
+  [Meta.synthInstance] ✅️ new goal HSub ℕ ℕ _tc.1
+    [Meta.synthInstance.instances] #[@instHSub]
+  [Meta.synthInstance.apply] ✅️ apply @instHSub to HSub ℕ ℕ ℕ
+    [Meta.synthInstance.tryResolve] ✅️ HSub ℕ ℕ ℕ ≟ HSub ℕ ℕ ℕ
+    [Meta.synthInstance] ✅️ new goal Sub ℕ
+      [Meta.synthInstance.instances] #[@Lean.Grind.AddCommGroup.toSub, @Lean.Grind.Ring.toSub, @SubNegMonoid.toSub, instSubNat]
+  [Meta.synthInstance.apply] ✅️ apply instSubNat to Sub ℕ
+    [Meta.synthInstance.tryResolve] ✅️ Sub ℕ ≟ Sub ℕ
+    [Meta.synthInstance.answer] ✅️ Sub ℕ
+  [Meta.synthInstance.resume] ✅️ propagating Sub ℕ to subgoal Sub ℕ of HSub ℕ ℕ ℕ
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ HSub ℕ ℕ ℕ
+  [Meta.synthInstance] result instHSub
+[Meta.synthInstance] 💥️ OfNat ?m.11 1
+  [Meta.synthInstance] ✅️ new goal OfNat ?m.11 1
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat, @instOfNatAtLeastTwo, @PosNum.instOfNatHAddNatOfNat, ONote.nat, @Pi.instOfNat, @One.toOfNat1, @Std.Time.Internal.Bounded.LE.instOfNatHAddIntCast, @Lean.Json.instOfNat, @Std.Time.Week.instOfNatOrdinal, @Int16.instOfNat, @Std.Time.Hour.instOfNatOffset, @Aesop.Nanos.instOfNat, @Std.Time.Millisecond.instOfNatOrdinal, @Std.Time.Day.Ordinal.instOfNatOfYear, @UInt64.instOfNat, @Std.Time.Week.Aligned.instOfNatOrdinal, @Rat.instOfNat, @Lean.JsonNumber.instOfNat, @Std.Time.Week.OfYear.instOfNatOrdinal, @Std.Time.Second.instOfNatOrdinal, @Int8.instOfNat, @instOfNatFloat, @Std.Time.Month.instOfNatQuarter, @BitVec.instOfNat, Dyadic.instOfNat, @Std.Time.Internal.UnitVal.instOfNat, @Int64.instOfNat, @Std.Time.Second.instOfNatOffset, Lean.Level.instOfNat, @instOfNat, @Std.Time.Day.instOfNatOffset, @Id.instOfNat, @Std.Time.Nanosecond.instOfNatOrdinal, @Std.Time.Minute.instOfNatOffset, @Std.Time.Year.instOfNatOffset, @UInt16.instOfNat, @Std.Time.Weekday.instOfNatOrdinal, instOfNatNat, @Std.Time.Day.instOfNatOrdinal, @Std.Time.Millisecond.instOfNatOffset, @Std.Time.Timestamp.instOfNat, @UInt32.instOfNat, @Std.Time.Month.instOfNatOffset, OrderType.instOfNat, @Lean.instOfNatLeanOptionValue, @Std.Time.Nanosecond.instOfNatOffset, @Lean.JsonRpc.instOfNatRequestID, @UInt8.instOfNat, @Fin.instOfNat, @ISize.instOfNat, @Std.Time.instOfNatDuration, @Std.Time.Week.instOfNatOffset, @instOfNatFloat32, @Std.Time.WallTime.instOfNat, @Std.Time.Hour.instOfNatOrdinal, @Std.Time.Minute.instOfNatOrdinal, @Std.Time.Month.instOfNatOrdinal, @Int32.instOfNat, @USize.instOfNat, instOfNatPNatOfNeZeroNat, TopCat.I.instOfNatCarrierOfNatNat_1, @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ]
+  [Meta.synthInstance.apply] 💥️ apply @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ to OfNat ?m.11 1
+    [Meta.synthInstance.tryResolve] 💥️ OfNat ?m.11 1 ≟ OfNat (Lean.Grind.Ring.OfSemiring.Q ?m.14) ?m.16
+[Meta.synthInstance] 💥️ OfNat ?m.11 1
+  [Meta.synthInstance] ✅️ new goal OfNat ?m.11 1
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat, @instOfNatAtLeastTwo, @PosNum.instOfNatHAddNatOfNat, ONote.nat, @Pi.instOfNat, @One.toOfNat1, @Std.Time.Internal.Bounded.LE.instOfNatHAddIntCast, @Lean.Json.instOfNat, @Std.Time.Week.instOfNatOrdinal, @Int16.instOfNat, @Std.Time.Hour.instOfNatOffset, @Aesop.Nanos.instOfNat, @Std.Time.Millisecond.instOfNatOrdinal, @Std.Time.Day.Ordinal.instOfNatOfYear, @UInt64.instOfNat, @Std.Time.Week.Aligned.instOfNatOrdinal, @Rat.instOfNat, @Lean.JsonNumber.instOfNat, @Std.Time.Week.OfYear.instOfNatOrdinal, @Std.Time.Second.instOfNatOrdinal, @Int8.instOfNat, @instOfNatFloat, @Std.Time.Month.instOfNatQuarter, @BitVec.instOfNat, Dyadic.instOfNat, @Std.Time.Internal.UnitVal.instOfNat, @Int64.instOfNat, @Std.Time.Second.instOfNatOffset, Lean.Level.instOfNat, @instOfNat, @Std.Time.Day.instOfNatOffset, @Id.instOfNat, @Std.Time.Nanosecond.instOfNatOrdinal, @Std.Time.Minute.instOfNatOffset, @Std.Time.Year.instOfNatOffset, @UInt16.instOfNat, @Std.Time.Weekday.instOfNatOrdinal, instOfNatNat, @Std.Time.Day.instOfNatOrdinal, @Std.Time.Millisecond.instOfNatOffset, @Std.Time.Timestamp.instOfNat, @UInt32.instOfNat, @Std.Time.Month.instOfNatOffset, OrderType.instOfNat, @Lean.instOfNatLeanOptionValue, @Std.Time.Nanosecond.instOfNatOffset, @Lean.JsonRpc.instOfNatRequestID, @UInt8.instOfNat, @Fin.instOfNat, @ISize.instOfNat, @Std.Time.instOfNatDuration, @Std.Time.Week.instOfNatOffset, @instOfNatFloat32, @Std.Time.WallTime.instOfNat, @Std.Time.Hour.instOfNatOrdinal, @Std.Time.Minute.instOfNatOrdinal, @Std.Time.Month.instOfNatOrdinal, @Int32.instOfNat, @USize.instOfNat, instOfNatPNatOfNeZeroNat, TopCat.I.instOfNatCarrierOfNatNat_1, @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ]
+  [Meta.synthInstance.apply] 💥️ apply @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ to OfNat ?m.11 1
+    [Meta.synthInstance.tryResolve] 💥️ OfNat ?m.11 1 ≟ OfNat (Lean.Grind.Ring.OfSemiring.Q ?m.14) ?m.16
+[Meta.synthInstance] ✅️ OfNat ℕ 1
+  [Meta.synthInstance] ✅️ new goal OfNat ℕ 1
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat, @instOfNatAtLeastTwo, @One.toOfNat1, instOfNatNat]
+  [Meta.synthInstance.apply] ✅️ apply instOfNatNat to OfNat ℕ 1
+    [Meta.synthInstance.tryResolve] ✅️ OfNat ℕ 1 ≟ OfNat ℕ 1
+    [Meta.synthInstance.answer] ✅️ OfNat ℕ 1
+  [Meta.synthInstance] result instOfNatNat 1
+[Meta.synthInstance] ✅️ Fact (Nat.Prime p)
+  [Meta.synthInstance] ✅️ new goal Fact (Nat.Prime p)
+    [Meta.synthInstance.instances] #[this]
+  [Meta.synthInstance.apply] ✅️ apply this to Fact (Nat.Prime p)
+    [Meta.synthInstance.tryResolve] ✅️ Fact (Nat.Prime p) ≟ Fact (Nat.Prime p)
+    [Meta.synthInstance.answer] ✅️ Fact (Nat.Prime p)
+  [Meta.synthInstance] result this

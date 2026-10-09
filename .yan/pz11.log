@@ -1,0 +1,38 @@
+✖ [8924/8924] Building FermatFLT.FermatLittle (14s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FermatLittle.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.setup.json --json
+error: FermatFLT/FermatLittle.lean:64:23: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 1
+where
+ a := ↑p
+warning: FermatFLT/FermatLittle.lean:69:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+error: FermatFLT/FermatLittle.lean:96:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑?m ^ ?n
+in the target expression
+  ↑(r ^ p) = ↑r
+
+p : ℕ
+hp : Nat.Prime p
+r : ℕ
+hlt : r < p
+hz : ↑r ^ p = ↑r
+⊢ ↑(r ^ p) = ↑r
+warning: FermatFLT/FermatLittle.lean:122:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:136:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:139:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Some required targets logged failures:
+- FermatFLT.FermatLittle
+error: build failed

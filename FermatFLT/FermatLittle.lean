@@ -118,7 +118,7 @@ theorem fermatLittleInt (hp : Nat.Prime p) (a : ℤ) : (p : ℤ) ∣ a ^ p - a :
   -- a ≡ q [ZMOD p], since q = a % p:
   have har : a ≡ q [ZMOD (p : ℤ)] := by
     unfold Int.ModEq
-    simpa [q] using (Int.emod_emod a (p : ℤ)).symm
+    simp [q]
   -- q^p ≡ q [ZMOD p]:  the core, lifted through the integer cast.
   -- `Int.cast_pow` converts `(q.natAbs : ℤ)^p` (the integer power) to
   -- `((q.natAbs : ℤ) : ZMod p)^p`, and `castNatThrough` identifies the

@@ -1,0 +1,58 @@
+✖ [3095/3095] Building FermatFLT.FLT4 (8.1s)
+error: build failed
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FLT4.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.setup.json --json
+error: FermatFLT/FLT4.lean:121:37: failed to prove strict positivity, but it would be possible to prove nonnegativity if desired
+error: FermatFLT/FLT4.lean:132:8: Tactic `apply` failed: could not unify the type of `mul_left_inj' pp4`
+  ?m.392 * ↑p ^ 4 = ?m.393 * ↑p ^ 4 ↔ ?m.392 = ?m.393
+with the goal
+  a1 ^ 4 + b1 ^ 4 = c1 ^ 2
+
+case right.right
+p : ℕ
+hp : Nat.Prime p
+a1 : ℤ
+hpa : p ∣ (↑p * a1).natAbs
+b1 : ℤ
+hpb : p ∣ (↑p * b1).natAbs
+hab : ¬(↑p * a1).gcd (↑p * b1) = 1
+c1 : ℤ
+h : isMinSol (↑p * a1) (↑p * b1) (↑p ^ 2 * c1)
+hc1' : c1 ≠ 0
+pp4 : ↑p ^ 4 ≠ 0
+⊢ a1 ^ 4 + b1 ^ 4 = c1 ^ 2
+error: FermatFLT/FLT4.lean:159:51: Type mismatch
+  hk
+has type
+  1 = k * 2
+but is expected to have type
+  k * 2 = 1
+error: FermatFLT/FLT4.lean:161:6: Tactic `split_ifs` failed: no if-then-else conditions to split
+
+case inl.inl
+h : ∃ a b c, Fermat42 a b c
+a0 b0 c0 : ℤ
+hf : isMinSol a0 b0 c0
+hap : a0 % 2 = 0
+hbp : b0 % 2 = 0
+k : ℤ
+hk : ↑1 = 2 * k
+hk_int : k * 2 = 1
+hk0 : ¬∃ a0 b0 c0, isMinSol a0 b0 c0 ∧ a0 % 2 = 1 ∧ 0 < c0
+⊢ False
+error: FermatFLT/FLT4.lean:235:10: Function expected at
+  IsCoprime.mul_left (isCoprime_comm.mp hcop_rs) (isCoprime_comm.mp hcop_rs)
+but this term has type
+  IsCoprime (s * s) r
+
+Note: Expected a function because this term is being applied to the argument
+  .mul_add_left_left
+error: FermatFLT/FLT4.lean:244:37: Application type mismatch: The argument
+  hcpb
+has type
+  IsCoprime m (r * s)
+but is expected to have type
+  Int.gcd ?m.730 ?m.731 = 1
+in the application
+  Int.isCoprime_iff_gcd_eq_one.mpr hcpb
+Some required targets logged failures:
+- FermatFLT.FLT4

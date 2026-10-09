@@ -1,0 +1,156 @@
+⚠ [8926/8927] Replayed FermatFLT.FermatLittle
+warning: FermatFLT/FermatLittle.lean:68:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: FermatFLT/FermatLittle.lean:121:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:135:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:138:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✖ [8927/8927] Building FermatFLT.WilesBridge (237s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\WilesBridge.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\WilesBridge.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\WilesBridge.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\WilesBridge.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\WilesBridge.setup.json --json
+error: FermatFLT/WilesBridge.lean:59:20: Unknown constant `Nat.le_exists_add'`
+error: FermatFLT/WilesBridge.lean:59:9: Tactic `rcases` failed: `x✝ : ?m.14` is not an inductive datatype
+error: FermatFLT/WilesBridge.lean:90:48: unexpected token ','; expected 'by' or 'from'
+error: FermatFLT/WilesBridge.lean:74:21: don't know how to synthesize implicit argument `d`
+  @iDvdPow p h3 (?m.53 x) (?m.54 x)
+context:
+p : ℕ
+a b c : ℤ
+hp : Nat.Prime p
+hrel : a ^ p + b ^ p = c ^ p
+hprim : IsPrimitive a b c
+hp2 : 2 ≤ p
+h3 : 1 ≤ p
+x : ?m.49
+⊢ ℤ
+error: FermatFLT/WilesBridge.lean:74:21: don't know how to synthesize implicit argument `x`
+  @iDvdPow p h3 (?m.53 x) (?m.54 x)
+context:
+p : ℕ
+a b c : ℤ
+hp : Nat.Prime p
+hrel : a ^ p + b ^ p = c ^ p
+hprim : IsPrimitive a b c
+hp2 : 2 ≤ p
+h3 : 1 ≤ p
+x : ?m.49
+⊢ ℤ
+error: FermatFLT/WilesBridge.lean:74:16: Failed to infer type of binder `x`
+error: FermatFLT/WilesBridge.lean:74:6: failed to infer `let` declaration type
+error: FermatFLT/WilesBridge.lean:70:37: unsolved goals
+p : ℕ
+a b c : ℤ
+hp : Nat.Prime p
+hrel : a ^ p + b ^ p = c ^ p
+hprim : IsPrimitive a b c
+hp2 : 2 ≤ p
+h3 : 1 ≤ p
+⊢ ¬(↑p ∣ a ∧ ↑p ∣ b) ∧ ¬(↑p ∣ a ∧ ↑p ∣ c) ∧ ¬(↑p ∣ b ∧ ↑p ∣ c)
+warning: FermatFLT/WilesBridge.lean:118:27: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: FermatFLT/WilesBridge.lean:144:19: Type mismatch
+  hrel
+has type
+  a ^ p + b ^ p = c ^ p
+but is expected to have type
+  ↑a ^ p + ↑b ^ p = ↑c ^ p
+warning: FermatFLT/WilesBridge.lean:150:8: declaration uses `sorry`
+warning: FermatFLT/WilesBridge.lean:154:2: Unused tactic linter: `rw [freyModel_Δ]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: FermatFLT/WilesBridge.lean:155:2: Unused tactic linter: `ring_nf` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: FermatFLT/WilesBridge.lean:155:2: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+error: FermatFLT/WilesBridge.lean:163:34: Application type mismatch: The argument
+  mul_ne_zero ?m.57 ?m.58 ?m.59
+has type
+  False
+but is expected to have type
+  16 * ↑a ^ (2 * p) ≠ 0
+in the application
+  mul_ne_zero (mul_ne_zero ?m.57 ?m.58 ?m.59)
+error: FermatFLT/WilesBridge.lean:161:38: unsolved goals
+p : ℕ
+a b c : ℤ
+hrel : a ^ p + b ^ p = c ^ p
+ha : a ≠ 0
+hb : b ≠ 0
+hc : c ≠ 0
+⊢ 16 * ↑a ^ (2 * p) * ↑b ^ (2 * p) * ↑c ^ (2 * p) ≠ 0
+error: FermatFLT/WilesBridge.lean:179:77: unexpected identifier; expected 'lemma'
+error: FermatFLT/WilesBridge.lean:203:15: unexpected token ','; expected ')'
+error: FermatFLT/WilesBridge.lean:200:49: failed to synthesize instance of type class
+  OfNat Prop 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Prop
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: FermatFLT/WilesBridge.lean:200:53: Unknown identifier `y`
+error: FermatFLT/WilesBridge.lean:200:61: Unknown identifier `z`
+error: FermatFLT/WilesBridge.lean:200:77: Unknown identifier `y`
+error: FermatFLT/WilesBridge.lean:200:85: Unknown identifier `z`
+error: FermatFLT/WilesBridge.lean:201:21: Unknown identifier `z`
+error: FermatFLT/WilesBridge.lean:200:69: failed to synthesize instance of type class
+  HPow Prop ℕ ?m.155
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: FermatFLT/WilesBridge.lean:200:37: Unknown identifier `y`
+error: FermatFLT/WilesBridge.lean:200:40: Unknown identifier `z`
+error: FermatFLT/WilesBridge.lean:200:31: Type mismatch
+  x✝
+has type
+  ℤ × ℤ × ℤ
+but is expected to have type
+  Prop × ?m.168 × ?m.169
+error: FermatFLT/WilesBridge.lean:188:100: unsolved goals
+p : ℕ
+hp : Nat.Prime p
+a b c : ℤ
+ha : a ≠ 0
+hb : b ≠ 0
+hc : c ≠ 0
+hrel : a ^ p + b ^ p = c ^ p
+hbc : 0 < c.natAbs
+hmin :
+  ∃ a1 b1 c1,
+    a1 ≠ 0 ∧
+      b1 ≠ 0 ∧
+        c1 ≠ 0 ∧
+          a1 ^ p + b1 ^ p = c1 ^ p ∧
+            c1.natAbs = c.natAbs ∧
+              ∀ (d1 e1 f1 : ℤ),
+                d1 ≠ 0 →
+                  e1 ≠ 0 →
+                    f1 ≠ 0 → d1 ^ p + e1 ^ p = f1 ^ p → f1.natAbs ≤ c.natAbs → f1.natAbs = c.natAbs → d1 = a1 ∧ e1 = b1
+⊢ ∃ a1 b1 c1, a1 ≠ 0 ∧ b1 ≠ 0 ∧ c1 ≠ 0 ∧ IsPrimitive a1 b1 c1 ∧ a1 ^ p + b1 ^ p = c1 ^ p
+error: FermatFLT/WilesBridge.lean:265:70: Unknown identifier `h`
+error: FermatFLT/WilesBridge.lean:266:51: Application type mismatch: The argument
+  he
+has type
+  E.IsElliptic
+but is expected to have type
+  Semistable ?m.58
+in the application
+  semistableModular he
+error: FermatFLT/WilesBridge.lean:267:48: Unknown identifier `h`
+error: FermatFLT/WilesBridge.lean:276:8: Unknown identifier `freyCoalesce`
+error: FermatFLT/WilesBridge.lean:286:23: unexpected token ','; expected 'by' or 'from'
+error: FermatFLT/WilesBridge.lean:286:13: unsolved goals

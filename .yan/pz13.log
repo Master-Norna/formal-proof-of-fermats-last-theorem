@@ -1,0 +1,28 @@
+✖ [8924/8924] Building FermatFLT.FermatLittle (13s)
+error: build failed
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FermatLittle.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.setup.json --json
+error: FermatFLT/FermatLittle.lean:63:10: typeclass instance problem is stuck
+  MonoidWithZero ?m.29
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `MonoidWithZero` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+warning: FermatFLT/FermatLittle.lean:68:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: FermatFLT/FermatLittle.lean:121:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:135:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:138:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Some required targets logged failures:
+- FermatFLT.FermatLittle

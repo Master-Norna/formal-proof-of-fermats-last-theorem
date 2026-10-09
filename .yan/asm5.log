@@ -1,0 +1,20 @@
+⚠ [8927/8928] Replayed FermatFLT.FermatLittle
+warning: FermatFLT/FermatLittle.lean:68:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: FermatFLT/FermatLittle.lean:121:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:135:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:138:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [8928/8928] Built FermatFLT.Assembly (506s)
+Build completed successfully (8928 jobs).

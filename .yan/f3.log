@@ -1,0 +1,42 @@
+✖ [3095/3095] Building FermatFLT.FLT4 (8.2s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FLT4.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.setup.json --json
+error: FermatFLT/FLT4.lean:121:67: unsolved goals
+p : ℕ
+hp : Nat.Prime p
+a1 : ℤ
+hpa : p ∣ (↑p * a1).natAbs
+b1 : ℤ
+hpb : p ∣ (↑p * b1).natAbs
+hab : ¬(↑p * a1).gcd (↑p * b1) = 1
+h : isMinSol (↑p * a1) (↑p * b1) (↑p ^ 2 * 0)
+hpA : ↑p * a1 ≠ 0
+hpB : ↑p * b1 ≠ 0
+⊢ ℕ
+error: FermatFLT/FLT4.lean:131:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑p ^ 4 * (a1 ^ 4 + b1 ^ 4)
+in the target expression
+  (↑p * a1) ^ 4 + (↑p * b1) ^ 4 = (↑p ^ 2 * c1) ^ 2
+
+p : ℕ
+hp : Nat.Prime p
+a1 : ℤ
+hpa : p ∣ (↑p * a1).natAbs
+b1 : ℤ
+hpb : p ∣ (↑p * b1).natAbs
+hab : ¬(↑p * a1).gcd (↑p * b1) = 1
+c1 : ℤ
+h : isMinSol (↑p * a1) (↑p * b1) (↑p ^ 2 * c1)
+hc1' : c1 ≠ 0
+hp4 : ↑p ^ 4 ≠ 0
+hsub : (↑p * a1) ^ 4 + (↑p * b1) ^ 4 = (↑p ^ 2 * c1) ^ 2
+hL : ↑p ^ 4 * (a1 ^ 4 + b1 ^ 4) = (↑p * a1) ^ 4 + (↑p * b1) ^ 4
+hR : ↑p ^ 4 * c1 ^ 2 = (↑p ^ 2 * c1) ^ 2
+⊢ False
+error: FermatFLT/FLT4.lean:159:6: failed to synthesize
+  Decidable (2 ∣ ↑1 → ∃ a0 b0 c0, isMinSol a0 b0 c0 ∧ a0 % 2 = 1 ∧ 0 < c0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FermatFLT/FLT4.lean:218:30: Unknown identifier `bp`
+Some required targets logged failures:
+- FermatFLT.FLT4
+error: build failed

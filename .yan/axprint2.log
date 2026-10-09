@@ -1,0 +1,20 @@
+FermatFLT.fermatFourth : FermatFLT.FLT 4
+FermatFLT.fermatLittleInt {p : ℕ} (hp : Nat.Prime p) (a : ℤ) : ↑p ∣ a ^ p - a
+FermatFLT.fltThree : FermatFLT.FLT 3
+FermatFLT.oddPrimeBranch (p : ℕ) (hp : Nat.Prime p) (hOdd : Odd p) : FermatFLT.FLT p
+FermatFLT.fermatLastTheorem (n : ℕ) : 3 ≤ n → FermatFLT.FLT n
+'FermatFLT.fermatFourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FermatFLT.fermatLittleInt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FermatFLT.fltThree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FermatFLT.oddPrimeBranch' depends on axioms: [propext,
+ Classical.choice,
+ FermatFLT.IsModular,
+ FermatFLT.axRibetFrey,
+ FermatFLT.axWilesFrey,
+ Quot.sound]
+'FermatFLT.fermatLastTheorem' depends on axioms: [propext,
+ Classical.choice,
+ FermatFLT.IsModular,
+ FermatFLT.axRibetFrey,
+ FermatFLT.axWilesFrey,
+ Quot.sound]

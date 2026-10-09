@@ -1,0 +1,47 @@
+✖ [8924/8924] Building FermatFLT.FermatLittle (12s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FermatLittle.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.setup.json --json
+error: FermatFLT/FermatLittle.lean:44:4: No goals to be solved
+error: FermatFLT/FermatLittle.lean:64:19: Application type mismatch: The argument
+  Nat.Prime.pos hp
+has type
+  0 < p
+but is expected to have type
+  ?m.31 ≠ 0
+in the application
+  zero_pow (Nat.Prime.pos hp)
+warning: FermatFLT/FermatLittle.lean:69:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+error: FermatFLT/FermatLittle.lean:95:80: Application type mismatch: The argument
+  hz
+has type
+  ↑r ^ p = ↑r
+but is expected to have type
+  ↑(r ^ p) = ↑r
+in the application
+  (natCast_eq_natCast_iff (r ^ p) r p).mp hz
+warning: FermatFLT/FermatLittle.lean:113:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: FermatFLT/FermatLittle.lean:119:75: Application type mismatch: The argument
+  zmodFermatPow hp hrpr
+has type
+  ↑q.natAbs ^ p = ↑q.natAbs
+but is expected to have type
+  ↑(↑q.natAbs ^ p) = ↑↑q.natAbs
+in the application
+  (intCast_eq_intCast_iff (↑q.natAbs ^ p) (↑q.natAbs) p).mp (zmodFermatPow hp hrpr)
+warning: FermatFLT/FermatLittle.lean:125:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:128:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Some required targets logged failures:
+- FermatFLT.FermatLittle
+error: build failed

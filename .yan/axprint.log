@@ -1,0 +1,29 @@
+FermatFLT/Check.ax.lean:9:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.Foundations.FLT`
+FermatFLT/Check.ax.lean:10:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.Foundations.of_four_and_odd_primes`
+FermatFLT.fermatFourth : FermatFLT.FLT 4
+FermatFLT.fermatLittleInt {p : ℕ} (hp : Nat.Prime p) (a : ℤ) : ↑p ∣ a ^ p - a
+FermatFLT/Check.ax.lean:13:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.WilesBridge.freyDelta_sq`
+FermatFLT/Check.ax.lean:14:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.WilesBridge.freyNotDegenerate`
+FermatFLT/Check.ax.lean:15:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.WilesBridge.existsPrimitiveCounter`
+FermatFLT/Check.ax.lean:16:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.WilesBridge.axRibetFrey`
+FermatFLT/Check.ax.lean:17:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.WilesBridge.axWilesFrey`
+FermatFLT/Check.ax.lean:18:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.WilesBridge.freyContradiction`
+FermatFLT/Check.ax.lean:19:7: error(lean.unknownIdentifier): Unknown identifier `FermatFLT.fermatLastTheoremThree`
+FermatFLT.oddPrimeBranch (p : ℕ) (hp : Nat.Prime p) (hOdd : Odd p) : FermatFLT.FLT p
+FermatFLT.fermatLastTheorem (n : ℕ) : 3 ≤ n → FermatFLT.FLT n
+'FermatFLT.fermatFourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FermatFLT.fermatLittleInt' depends on axioms: [propext, Classical.choice, Quot.sound]
+FermatFLT/Check.ax.lean:25:14: error(lean.unknownIdentifier): Unknown constant `FermatFLT.fermatLastTheoremThree`
+'FermatFLT.oddPrimeBranch' depends on axioms: [propext,
+ Classical.choice,
+ FermatFLT.IsModular,
+ FermatFLT.axRibetFrey,
+ FermatFLT.axWilesFrey,
+ Quot.sound]
+'FermatFLT.fermatLastTheorem' depends on axioms: [propext,
+ Classical.choice,
+ FermatFLT.IsModular,
+ FermatFLT.axRibetFrey,
+ FermatFLT.axWilesFrey,
+ Quot.sound]
+FermatFLT/Check.ax.lean:28:14: error(lean.unknownIdentifier): Unknown constant `FermatFLT.WilesBridge.freyContradiction`

@@ -1,0 +1,60 @@
+✖ [8928/8928] Building FermatFLT.FermatLittle (13s)
+error: build failed
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FermatLittle.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FermatLittle.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FermatLittle.setup.json --json
+error: FermatFLT/FermatLittle.lean:54:32: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a * 0
+in the target expression
+  ↑0 * ↑0 ^ (p - 1) = ↑0
+
+case pos
+p : ℕ
+hp : Nat.Prime p
+hlt : 0 < p
+hsem : p = 1 + (p - 1)
+⊢ ↑0 * ↑0 ^ (p - 1) = ↑0
+error: FermatFLT/FermatLittle.lean:55:2: unsolved goals
+case neg
+p r : ℕ
+hp : Nat.Prime p
+hlt : r < p
+hz : ¬r = 0
+hpos : 0 < r
+hU : IsUnit ↑r
+hUu : IsUnit ↑hU.unit
+u : ZMod p := ↑hU.unit
+⊢ ↑r ^ p = ↑r
+error: FermatFLT/FermatLittle.lean:58:23: unexpected token ':'; expected command
+error: FermatFLT/FermatLittle.lean:84:2: Type mismatch: After simplification, term
+  Nat.ModEq.dvd (Nat.ModEq.symm hmod)
+ has type
+  ↑p ∣ ↑r ^ p - ↑r
+but is expected to have type
+  p ∣ r ^ p - r
+error: FermatFLT/FermatLittle.lean:103:31: unexpected token ':='; expected 'by' or 'from'
+error: FermatFLT/FermatLittle.lean:103:11: unsolved goals
+p : ℕ
+hp : Nat.Prime p
+a : ℤ
+q : ℤ := a % ↑p
+hp0nz : ↑p ≠ 0
+hq0 : 0 ≤ q
+hql : q < ↑p
+r : ℕ := q.natAbs
+hqe : q = ↑r
+hrpr : r < p
+⊢ q = a % ↑p
+error: FermatFLT/FermatLittle.lean:90:76: unsolved goals
+p : ℕ
+hp : Nat.Prime p
+a : ℤ
+q : ℤ := a % ↑p
+hp0nz : ↑p ≠ 0
+hq0 : 0 ≤ q
+hql : q < ↑p
+r : ℕ := q.natAbs
+hqe : q = ↑r
+hrpr : r < p
+har : a ≡ q [ZMOD ↑p]
+⊢ ↑p ∣ a ^ p - a
+Some required targets logged failures:
+- FermatFLT.FermatLittle

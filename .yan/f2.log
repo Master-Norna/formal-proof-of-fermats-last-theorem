@@ -1,0 +1,80 @@
+✖ [3095/3095] Building FermatFLT.FLT4 (8.0s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\FLT4.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\FLT4.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\FLT4.setup.json --json
+error: FermatFLT/FLT4.lean:124:27: unexpected token 'by'; expected '⟩'
+error: FermatFLT/FLT4.lean:120:6: Type mismatch
+  h.left.right.right
+has type
+  (↑p * a1) ^ 4 + (↑p * b1) ^ 4 = (↑p ^ 2 * 0) ^ 2
+but is expected to have type
+  (↑p ^ 2) ^ 2 = 0
+error: FermatFLT/FLT4.lean:121:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a ^ (?m * ?n)
+in the target expression
+  (↑p ^ 2) ^ 2 = 0
+
+p : ℕ
+hp : Nat.Prime p
+a1 : ℤ
+hpa : p ∣ (↑p * a1).natAbs
+b1 : ℤ
+hpb : p ∣ (↑p * b1).natAbs
+hab : ¬(↑p * a1).gcd (↑p * b1) = 1
+c1 : ℤ
+h : isMinSol (↑p * a1) (↑p * b1) (↑p ^ 2 * c1)
+h0 : c1 = 0
+hpc0 : (↑p ^ 2) ^ 2 = 0
+⊢ False
+error: FermatFLT/FLT4.lean:124:11: Insufficient number of fields for `⟨...⟩` constructor: Constructor `And.intro` has 2 explicit field, but only 1 was provided
+error: FermatFLT/FLT4.lean:124:22: Type mismatch
+  h.left.left
+has type
+  ↑p * a1 ≠ 0
+but is expected to have type
+  False
+error: FermatFLT/FLT4.lean:102:75: unsolved goals
+p : ℕ
+hp : Nat.Prime p
+a1 : ℤ
+hpa : p ∣ (↑p * a1).natAbs
+b1 : ℤ
+hpb : p ∣ (↑p * b1).natAbs
+hab : ¬(↑p * a1).gcd (↑p * b1) = 1
+c1 : ℤ
+h : isMinSol (↑p * a1) (↑p * b1) (↑p ^ 2 * c1)
+hc1' : c1 ≠ 0
+hf : Fermat42 a1 b1 c1
+⊢ False
+error: FermatFLT/FLT4.lean:154:8: Type mismatch
+  Int.isCoprime_iff_gcd_eq_one.mp (minSol_coprime hf)
+has type
+  a0.gcd b0 = 1
+but is expected to have type
+  ↑(a0.gcd b0) = 1
+error: FermatFLT/FLT4.lean:159:43: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  2 * t
+in the target expression
+  1 % 2 = 0
+
+h : ∃ a b c, Fermat42 a b c
+a0 b0 c0 : ℤ
+hf : isMinSol a0 b0 c0
+hap : a0 % 2 = 0
+hbp : b0 % 2 = 0
+h2 : ↑(a0.gcd b0) = 1
+t : ℤ
+ht : 1 = 2 * t
+h0 : t * 2 % 2 = 0
+h12 : 1 % 2 = 1
+⊢ 1 % 2 = 0
+error: FermatFLT/FLT4.lean:210:40: Application type mismatch: The argument
+  b
+has type
+  ℤ
+of sort `Type` but is expected to have type
+  ?m.364 = 0
+of sort `Prop` in the application
+  Fermat42_mzero b
+error: FermatFLT/FLT4.lean:220:30: Unknown identifier `bp`
+Some required targets logged failures:
+- FermatFLT.FLT4
+error: build failed

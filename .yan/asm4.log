@@ -1,0 +1,38 @@
+⚠ [8927/8928] Replayed FermatFLT.FermatLittle
+warning: FermatFLT/FermatLittle.lean:68:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: FermatFLT/FermatLittle.lean:121:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:135:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:138:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✖ [8928/8928] Building FermatFLT.Assembly (12s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\Assembly.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\Assembly.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\Assembly.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\Assembly.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\Assembly.setup.json --json
+error: FermatFLT/Assembly.lean:71:6: Unknown identifier `Mathlib.NumberTheory.FLT.Three.fermatLastTheoremThree`
+error: FermatFLT/Assembly.lean:94:14: Function expected at
+  hOdd
+but this term has type
+  Odd 2
+
+Note: Expected a function because this term is being applied to the argument
+  (not_odd_iff_even.mpr (by decide : Even 2))
+error: FermatFLT/Assembly.lean:99:14: Function expected at
+  hOdd
+but this term has type
+  Odd 4
+
+Note: Expected a function because this term is being applied to the argument
+  (not_odd_iff_even.mpr (by decide : Even 4))
+Some required targets logged failures:
+- FermatFLT.Assembly
+error: build failed

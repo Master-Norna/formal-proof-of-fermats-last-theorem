@@ -1,0 +1,79 @@
+✖ [8924/8924] Building FermatFLT._probeZ (12s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\_probeZ.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeZ.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\_probeZ.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\_probeZ.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\_probeZ.setup.json --json
+error: FermatFLT/_probeZ.lean:16:50: Unknown identifier `p3`
+error: FermatFLT/_probeZ.lean:19:4: Type mismatch
+  hcore
+has type
+  ↑r ^ p = ↑r
+but is expected to have type
+  ↑(↑r ^ p) = ↑r
+error: FermatFLT/_probeZ.lean:20:47: Application type mismatch: The argument
+  hl
+has type
+  ↑↑r ^ p = ↑↑r
+but is expected to have type
+  ↑(↑r ^ p) = ↑↑r
+in the application
+  (intCast_eq_intCast_iff (↑r ^ p) (↑r) p).mp hl
+error: FermatFLT/_probeZ.lean:26:2: unsolved goals
+case pos
+p : ℕ
+hp : Nat.Prime p
+hlt : 0 < p
+hp0 : p ≠ 0
+⊢ 0 ^ p = 0
+warning: FermatFLT/_probeZ.lean:39:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+error: FermatFLT/_probeZ.lean:50:26: Unknown identifier `simp`
+error: FermatFLT/_probeZ.lean:45:12: Tactic `rewrite` failed: motive is not type correct:
+  fun _a ↦ ↑r ^ _a = ↑r * ↑r ^ (_a - 1)
+Error: Application type mismatch: The argument
+  this
+has type
+  Fact (Nat.Prime p)
+but is expected to have type
+  Fact (Nat.Prime _a)
+in the application
+  @instField _a ⋯
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+p r : ℕ
+hp : Nat.Prime p
+hlt : r < p
+hz : ¬r = 0
+hpos : 0 < r
+hU : IsUnit ↑r
+u : (ZMod p)ˣ := hU.unit
+hval : ↑u = ↑r
+this : Fact (Nat.Prime p)
+hcard : Fintype.card (ZMod p)ˣ = p - 1
+hpm1 : u ^ (p - 1) = 1
+hsem : p = 1 + (p - 1)
+⊢ ↑r ^ p = ↑r * ↑r ^ (p - 1)
+error: FermatFLT/_probeZ.lean:48:12: Unknown identifier `unitPowCoerce`
+error: FermatFLT/_probeZ.lean:46:30: unsolved goals
+p r : ℕ
+hp : Nat.Prime p
+hlt : r < p
+hz : ¬r = 0
+hpos : 0 < r
+hU : IsUnit ↑r
+u : (ZMod p)ˣ := hU.unit
+hval : ↑u = ↑r
+this : Fact (Nat.Prime p)
+hcard : Fintype.card (ZMod p)ˣ = p - 1
+hpm1 : u ^ (p - 1) = 1
+⊢ ↑u * ↑u ^ (p - 1) = ↑u * 1
+error: FermatFLT/_probeZ.lean:58:4: No goals to be solved
+Some required targets logged failures:
+- FermatFLT._probeZ
+error: build failed

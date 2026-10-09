@@ -1,0 +1,39 @@
+⚠ [8927/8928] Replayed FermatFLT.FermatLittle
+warning: FermatFLT/FermatLittle.lean:68:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: FermatFLT/FermatLittle.lean:121:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:135:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FermatFLT/FermatLittle.lean:138:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+error: build failed
+✖ [8928/8928] Building FermatFLT.Assembly (12s)
+trace: .> LEAN_PATH=E:\项目\Test\.lake\packages\Cli\.lake\build\lib\lean;E:\项目\Test\.lake\packages\batteries\.lake\build\lib\lean;E:\项目\Test\.lake\packages\Qq\.lake\build\lib\lean;E:\项目\Test\.lake\packages\aesop\.lake\build\lib\lean;E:\项目\Test\.lake\packages\proofwidgets\.lake\build\lib\lean;E:\项目\Test\.lake\packages\importGraph\.lake\build\lib\lean;E:\项目\Test\.lake\packages\LeanSearchClient\.lake\build\lib\lean;E:\项目\Test\.lake\packages\plausible\.lake\build\lib\lean;E:\项目\Test\.lake\packages\mathlib\.lake\build\lib\lean;E:\项目\Test\.lake\build\lib\lean c:\Users\25734\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe E:\项目\Test\FermatFLT\Assembly.lean -o E:\项目\Test\.lake\build\lib\lean\FermatFLT\Assembly.olean -i E:\项目\Test\.lake\build\lib\lean\FermatFLT\Assembly.ilean -c E:\项目\Test\.lake\build\ir\FermatFLT\Assembly.c --setup E:\项目\Test\.lake\build\ir\FermatFLT\Assembly.setup.json --json
+error: FermatFLT/Assembly.lean:70:41: Application type mismatch: The argument
+  fermatLastTheoremThree
+has type
+  FLT 3
+but is expected to have type
+  FermatLastTheoremFor 3
+in the application
+  fermatLastTheoremFor_iff_int.mp fermatLastTheoremThree
+error: FermatFLT/Assembly.lean:83:8: unknown tactic
+error: FermatFLT/Assembly.lean:82:2: unsolved goals
+case neg
+p : ℕ
+hp : Nat.Prime p
+hOdd : Odd p
+h3 : ¬p = 3
+⊢ FLT p
+Some required targets logged failures:
+- FermatFLT.Assembly
