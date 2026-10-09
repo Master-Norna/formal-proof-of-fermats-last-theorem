@@ -1,0 +1,9 @@
+.lake/
+smoke/
+verify_math.py
+verify_math2.py
+_pm.lean
+.yan/final*.log
+.yan/wb_defect*.log
+.yan/*.tmp
+*.olean

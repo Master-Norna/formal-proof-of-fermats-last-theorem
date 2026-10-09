@@ -1,0 +1,14 @@
+name = "FermatFLT"
+version = "0.1.0"
+defaultTargets = ["FermatFLT"]
+
+[leanOptions]
+pp.unicode.fun = true
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.34.1"
+
+[[lean_lib]]
+name = "FermatFLT"

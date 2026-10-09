@@ -1,0 +1,58 @@
+fermat4_descent_check.py  (probe 2: symbolic descent recheck, sympy)
+python 3.12.14  |  sympy 1.14.0
+run: 2026-10-08 06:14:04
+
+================================== [I1]  a^2=m^2-n^2, b^2=2mn, c=m^2+n^2   ==>   a^2 + n^2 = m^2 ==================================
+  a^2 := m^2 - n^2 ;   a^2 + n^2  =  m**2
+  simplify((m^2-n^2) + n^2 - m^2)  =  0
+  VERDICT I1:  TRUE (simplify -> 0)
+  cross: (m^2-n^2)^2 + (2mn)^2 == (m^2+n^2)^2  ->  simplify: 0   (i.e. a^4+b^4=c^4 holds)
+
+================================== [I2]  b = 2bp,  n = 2rs   ==>   bp^2 = m r s ==================================
+  b := 2 bp ;   b^2 = 4 bp^2
+  RHS: 2 m n  with n := 2 r s  ->  2 m (2 r s)  =  4*m*r*s = 4 m r s
+  factor(4bp^2 - 4mrs) = -4*(-bp**2 + m*r*s)   (= 4*(bp^2 - mrs))
+  under the assumed premise b^2 = 2mn (i.e. (2bp)^2 = 2m(2rs)):
+  solve((2bp)^2 = 4mrs, bp)  ->  [sqrt(m)*sqrt(r)*sqrt(s)]    (proportional branch chosen)
+  substitute bp = sqrt(mrs) into (bp^2 - mrs):  0
+  VERDICT I2:  TRUE (holds iff b^2=4mrs premise, as stated)
+  residual (free-symbol, WITHOUT premise):  bp**2 - m*r*s   -- confirms: needs the premise
+
+================================== [I3]  m = i^2,  r = j^2,  s = k^2,  m = r^2 + s^2   ==>   i^2 = j^4 + k^4 ==================================
+  m := r^2 + s^2;  substitute r=j^2, s=k^2:   r^2+s^2  ->  j**4 + k**4
+  simplify(j^4+k^4 - (j^4+k^4))  =  0
+  therefore  i^2 = m = r^2+s^2 = j^4 + k^4,  i.e. the descent read-off: (i, j, k) with  i^2 = j^4+k^4 = (j^2)^2 + (k^2)^2   (a SMALLER Pythagorean triple)
+  VERDICT I3:  TRUE (identity after stated substitutions)
+
+================================== [I4]  strict descent:  |i| <= i^2 = m  <  m^2 + n^2 = c   (for m,n positive integers) ==================================
+  Part A:  i^2 - |i|  as polynomial = i^2 - |i|:  for integers, i^2-|i| = |i|(|i|-1) >= 0
+     i= -3:  i^2-|i| = 6  (>=0: True)
+     i= -1:  i^2-|i| = 0  (>=0: True)
+     i=  0:  i^2-|i| = 0  (>=0: True)
+     i=  1:  i^2-|i| = 0  (>=0: True)
+     i=  2:  i^2-|i| = 2  (>=0: True)
+     i=  5:  i^2-|i| = 20  (>=0: True)
+  Part B:  (m^2 + n^2) - m  =  m**2 - m + n**2  =  (m-1)*m + n^2
+  since m,n >= 1 integers:  (m-1)*m >= 0 and n^2 >= 1  ->  (m^2+n^2)-m >= 1  -> strict
+  sympy positivity check with assumptions (m,n positive integers):  is_nonnegative=None  is_positive=None
+  minimum case m=1, n=2:  m=1  vs  c=m^2+n^2=5  ->  5 > 1   [smallest gap: c-m = 4 >= 1]
+  VERDICT I4:  TRUE (c-m = (m-1)m + n^2 >= 1 for m,n >= 1;  |i| <= i^2 for integer i
+
+================================== Descent consistency read-off (symbolic, no new assumptions) ==================================
+  old hypotenuse c       =  m**2 + n**2
+  new hypotenuse c'      =  m
+  gap c - c'             =  m**2 - m + n**2
+  so each descent step lowers the positive integer c  ->  c'  by a gap (c-c') = (m-1)m+n^2 >= 1;
+  an infinite strictly-decreasing chain of positive integers cannot exist.
+
+================================== SUMMARY  (four headline identities) ==================================
+  [I1]  PASSED  (m^2-n^2)+n^2 == m^2
+        note: direct simplify -> 0
+  [I2]  PASSED  bp^2 == mrs  under (2bp)^2 = 4mrs
+        note: solve+substitute; free residual bp**2 - m*r*s
+  [I3]  PASSED  m=r^2+s^2, r=j^2, s=k^2  ==>  i^2=j^4+k^4
+        note: identity after the stated identifications
+  [I4]  PASSED  |i| <= i^2 = m  <  m^2+n^2 = c  (m,n>=1 ints)
+        note:   (m-1)m+n^2 >= 1;  i^2-|i|>=0
+
+DONE probe 2   (0.1s total)

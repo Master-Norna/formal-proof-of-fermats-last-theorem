@@ -1,0 +1,148 @@
+fermint_probe.py  (probe 1: natural solutions / unsupported-approach checks)
+python 3.12.14  |  numpy 2.5.3
+run: 2026-10-08 05:59:27
+
+================================== P1a  n=2  primitive Pythagorean triples,  1<=a<=b,  c<=5000 ==================================
+primitive triples, c<=5000            : 792
+with integer scalings k*(a,b,c)       : 5681   (brute scan: 5681)
+first 20 (sorted by c):
+  [ 1]  (   3,   4,   5)   a^2+b^2==c^2 : True
+  [ 2]  (   5,  12,  13)   a^2+b^2==c^2 : True
+  [ 3]  (   8,  15,  17)   a^2+b^2==c^2 : True
+  [ 4]  (   7,  24,  25)   a^2+b^2==c^2 : True
+  [ 5]  (  20,  21,  29)   a^2+b^2==c^2 : True
+  [ 6]  (  12,  35,  37)   a^2+b^2==c^2 : True
+  [ 7]  (   9,  40,  41)   a^2+b^2==c^2 : True
+  [ 8]  (  28,  45,  53)   a^2+b^2==c^2 : True
+  [ 9]  (  11,  60,  61)   a^2+b^2==c^2 : True
+  [10]  (  16,  63,  65)   a^2+b^2==c^2 : True
+  [11]  (  33,  56,  65)   a^2+b^2==c^2 : True
+  [12]  (  48,  55,  73)   a^2+b^2==c^2 : True
+  [13]  (  13,  84,  85)   a^2+b^2==c^2 : True
+  [14]  (  36,  77,  85)   a^2+b^2==c^2 : True
+  [15]  (  39,  80,  89)   a^2+b^2==c^2 : True
+  [16]  (  65,  72,  97)   a^2+b^2==c^2 : True
+  [17]  (  20,  99, 101)   a^2+b^2==c^2 : True
+  [18]  (  60,  91, 109)   a^2+b^2==c^2 : True
+  [19]  (  15, 112, 113)   a^2+b^2==c^2 : True
+  [20]  (  44, 117, 125)   a^2+b^2==c^2 : True
+
+================================== P1b  n=3  primitive solutions  a^3+b^3=c^3,  1<=a<b,  b<=50 ==================================
+no primitive solution with b<=50  (gcd(a,b,c)=1, 1<=a<b<c)
+sanity: 2^3+1^3 = 9, not a cube  ->  pair (2,1) is not a solution
+
+================================== P1c  n=4   a^4+b^4=c^4,   1<=a<=b<=10000 ==================================
+no solution in range  ->  consistent with FLT(n=4) (infinite descent)
+runtime 7.2s  (numpy-vectorised b-loop; c-bound=11894)
+
+================================== P2  Kummer-path lift visibility mod p^4,  p in {3,5,7,11,13,17} ==================================
+Setting: in Z/p^4Z, for units a,b (p ∤ a, p ∤ b), does N=a^p+b^p admit a p-th
+root c (any c) and especially a unit root c?  Ground truth = full brute-force
+root table of x -> x^p over Z/p^4Z; v_p from the index of the first 1-digit.
+
+Deliberately try a naive descent characterisation and show it FAILS:
+  claim:  N (v_p(N)=0) has p-th root mod p^4  <=>  N mod p^2 in Im(x->x^p mod p^2)
+  counterexamples (N where N mod p^2 is a pth-power mod p^2 but N is not a
+  pth power mod p^4, i.e. a real lift failure):
+  p=3:  6 counterexamples, first few:  [9, 18, 36, 45, 63, 72]
+  p=5:  24 counterexamples, first few:  [25, 50, 75, 100, 125, 150]
+  p=13:  168 counterexamples, first few:  [169, 338, 507, 676, 845, 1014]
+  p=17:  288 counterexamples, first few:  [289, 578, 867, 1156, 1445, 1734]
+Conclusion: descending only mod p^2 is insufficient; the counting below uses the
+full root table.  (Roots: any c  includes the root c in ideal (p) (e.g. p=3, roots of
+N=18 are exactly the units:  check p=3 below) as well as roots with v_p(c)>0 (e.g.
+p=4? no: c in (p) -> c^p in (p^4)=0, so for units a,b: N=0 is the only zero case).
+
+  p |     |U| | root of zero case c in (p) | c in (p) (any c) | unit-root c (a,b,c all units) | runtime
+  3 |      54 |             1 (N=0)  |               486 |               0   (incl p|c: 486) |   0.0s
+  5 |     500 |             1 (N=0)  |             2,500 |               0   (incl p|c: 2,500) |   0.0s
+  7 |   2,058 |             1 (N=0)  |         1,426,194 |       1,411,788   (incl p|c: 14,406) |   0.0s
+ 11 |  13,310 |             1 (N=0)  |           146,410 |               0   (incl p|c: 146,410) |   1.8s
+ 13 |  26,364 |             1 (N=0)  |       116,186,148 |     115,843,416   (incl p|c: 342,732) |   7.2s
+ 17 |  78,608 |             1 (N=0)  |         1,336,336 |               0   (incl p|c: 1,336,336) |  64.9s
+
+interpretation:  Cex - Cun = # unit-pairs with a^p+b^p == 0 mod p^4  (the only non-unit-root
+v_values for units a,b are in ideal (p^4)? no, here a,b units -> a^p+b^p = 0,  or has a unit root. OK
+density vs all (Z/p^4)^2 (printed for p=3):
+  p=3:  486/6,561 = 0.074074  (any root)    0/6,561 = 0.000000  (unit root)
+  Takeaway: even among unit (a,b), a^p+b^p is rarely a pth-power: this is the
+  visibility step's numerical reflection -- most trails do not lift to a root.
+
+================================== P3  Frey j-invariant  j = 2^8 (a^(2p)+a^p b^(2p)+b^(2p))^2 / (a^p b^p) ==================================
+sympy version 1.14.0
+Note: at units (a^p,b^p)=(1,2), no integral Frey solution exists (c^p=1+2^p not an
+integral pth-power for odd p) -- no FLT counterexample is constructed here.  This is a
+numerical verification comparing the exact 2^k * m / 2^q value of j (obtained from
+an integer numerator/denominator ex bitwise-exact) against a float64 evaluation,
+surrounding the finite-precision degradation of the round-trip.
+p=3   (t = 1^6 + 1^3*2^6 + 2^6 = 129)
+   j_exact (sympy Rational)   = 532512   (bit-exact = 532512)
+   j_float64 (int/num div)    = 532512.0
+   j_float64 (direct float)   = 532512.0
+   rel error (int/num div)    = 0.000e+00
+   rel error (direct float)   = 0.000e+00
+   [degradation demo]  raw path: 256*129*129/2 = 2076392 (15-bit exact)
+                = (float64 max 20-bit) so for p=3 it still round-trips;
+                difference shows at larger p where 2**(2?p)*t**2 grows:
+p=5   (t = 1^10 + 1^5*2^10 + 2^10 = 2049)
+   j_exact (sympy Rational)   = 33587208   (bit-exact = 33587208)
+   j_float64 (int/num div)    = 33587208.0
+   j_float64 (direct float)   = 33587208.0
+   rel error (int/num div)    = 0.000e+00
+   rel error (direct float)   = 0.000e+00
+p=7   (t = 1^14 + 1^7*2^14 + 2^14 = 32769)
+   j_exact (sympy Rational)   = 2147614722   (bit-exact = 2147614722)
+   j_float64 (int/num div)    = 2147614722.0
+   j_float64 (direct float)   = 2147614722.0
+   rel error (int/num div)    = 0.000e+00
+   rel error (direct float)   = 0.000e+00
+p=11   (t = 1^22 + 1^11*2^22 + 2^22 = 8388609)
+   j_exact (sympy Rational)   = 70368760954881/8   (bit-exact = 8796095119360.12)
+   j_float64 (int/num div)    = 8796095119360.125
+   j_float64 (direct float)   = 8796095119360.125
+   rel error (int/num div)    = 0.000e+00
+   rel error (direct float)   = 0.000e+00
+   [degradation demo]  numerator = 18014402804449536 (2014 bit? > 2^64=18446744073709551616),
+   as float64 (round 2^-53):  step = 18014402804449536/2251799813685248 'of ulp at this exponent,'
+   exact numerator = 18014402804449536; as float64 -> 1.8014402804449536e+16;  diff = 0.0
+
+================================== P4  Mason-Stothers polynomial  X^p + Y^p = Z^p   (m=n=r=p) ==================================
+A=X^p, B=Y^p, C=Z^p in Q[X,Y,Z]: pairwise coprime, max degree = p.
+Claim to verify numerically (specialised):
+  det [[A',B',C'],[1,1,1],[A",B",C"]] = const * prod cyclic (X-Y) * (sum of monomial symmetric form)
+and  deg(rad((A-B)(B-C)(C-A))) = 3p > p,  matching Mason-Stothers'
+prediction  max(degA,degB,degC) < deg(rad(...))  for this symmetric specialisation.
+p=3:
+   claim A' = p X^(p-1), ...  det = const * (X^(?) -)  coefficients below
+   det (factored):
+      -18*(X - Y)*(X - Z)*(Y - Z)
+   rad((A-B)(B-C)(C-A)) (factored):  (X - Y)*(X - Z)*(Y - Z)*(X**2 + X*Y + Y**2)*(X**2 + X*Z + Z**2)*(Y**2 + Y*Z + Z**2)
+   W (factored):  -18*X**3*Y**3*Z**3*(X - Y)*(X - Z)*(Y - Z)   deg(W)=12
+   deg(rad) = 9   ->   Mason-Stothers (this symmetric specialisation):  p=3 < deg(rad)=9  :  HOLDS
+   explicit degree identity:  deg(rad) = 9 == 3p = 9  ->  True
+p=5:
+   claim A' = p X^(p-1), ...  det = const * (X^(?) -)  coefficients below
+   det (factored):
+      -100*(X - Y)*(X - Z)*(Y - Z)*(X**2*Y**2 + X**2*Y*Z + X**2*Z**2 + X*Y**2*Z + X*Y*Z**2 + Y**2*Z**2)
+   rad((A-B)(B-C)(C-A)) (factored):  (X - Y)*(X - Z)*(Y - Z)*(X**4 + X**3*Y + X**2*Y**2 + X*Y**3 + Y**4)*(X**4 + X**3*Z + X**2*Z**2 + X*Z**3 + Z**4)*(Y**4 + Y**3*Z + Y**2*Z**2 + Y*Z**3 + Z**4)
+   W (factored):  -100*X**5*Y**5*Z**5*(X - Y)*(X - Z)*(Y - Z)*(X**2*Y**2 + X**2*Y*Z + X**2*Z**2 + X*Y**2*Z + X*Y*Z**2 + Y**2*Z**2)   deg(W)=22
+   deg(rad) = 15   ->   Mason-Stothers (this symmetric specialisation):  p=5 < deg(rad)=15  :  HOLDS
+   explicit degree identity:  deg(rad) = 15 == 3p = 15  ->  True
+p=7:
+   claim A' = p X^(p-1), ...  det = const * (X^(?) -)  coefficients below
+   det (factored):
+      -294*(X - Y)*(X - Z)*(Y - Z)*(X**4*Y**4 + X**4*Y**3*Z + X**4*Y**2*Z**2 + X**4*Y*Z**3 + X**4*Z**4 + X**3*Y**4*Z + X**3*Y**3*Z**2 + X**3*Y**2*Z**3 + X**3*Y*Z**4 + X**2*Y**4*Z**2 + X**2*Y**3*Z**3 + X**2*Y**2*Z**4 + X*Y**4*Z**3 + X*Y**3*Z**4 + Y**4*Z**4)
+   rad((A-B)(B-C)(C-A)) (factored):  (X - Y)*(X - Z)*(Y - Z)*(X**6 + X**5*Y + X**4*Y**2 + X**3*Y**3 + X**2*Y**4 + X*Y**5 + Y**6)*(X**6 + X**5*Z + X**4*Z**2 + X**3*Z**3 + X**2*Z**4 + X*Z**5 + Z**6)*(Y**6 + Y**5*Z + Y**4*Z**2 + Y**3*Z**3 + Y**2*Z**4 + Y*Z**5 + Z**6)
+   W (factored):  -294*X**7*Y**7*Z**7*(X - Y)*(X - Z)*(Y - Z)*(X**4*Y**4 + X**4*Y**3*Z + X**4*Y**2*Z**2 + X**4*Y*Z**3 + X**4*Z**4 + X**3*Y**4*Z + X**3*Y**3*Z**2 + X**3*Y**2*Z**3 + X**3*Y*Z**4 + X**2*Y**4*Z**2 + X**2*Y**3*Z**3 + X**2*Y**2*Z**4 + X*Y**4*Z**3 + X*Y**3*Z**4 + Y**4*Z**4)   deg(W)=32
+   deg(rad) = 21   ->   Mason-Stothers (this symmetric specialisation):  p=7 < deg(rad)=21  :  HOLDS
+   explicit degree identity:  deg(rad) = 21 == 3p = 21  ->  True
+p=11:
+   claim A' = p X^(p-1), ...  det = const * (X^(?) -)  coefficients below
+   det (factored):
+      -1210*(X - Y)*(X - Z)*(Y - Z)*(X**8*Y**8 + X**8*Y**7*Z + X**8*Y**6*Z**2 + X**8*Y**5*Z**3 + X**8*Y**4*Z**4 + X**8*Y**3*Z**5 + X**8*Y**2*Z**6 + X**8*Y*Z**7 + X**8*Z**8 + X**7*Y**8*Z + X**7*Y**7*Z**2 + X**7*Y**6*Z**3 + X**7*Y**5*Z**4 + X**7*Y**4*Z**5 + X**7*Y**3*Z**6 + X**7*Y**2*Z**7 + X**7*Y*Z**8 + X**6*Y**8*Z**2 + X**6*Y**7*Z**3 + X**6*Y**6*Z**4 + X**6*Y**5*Z**5 + X**6*Y**4*Z**6 + X**6*Y**3*Z**7 + X**6*Y**2*Z**8 + X**5*Y**8*Z**3 + X**5*Y**7*Z**4 + X**5*Y**6*Z**5 + X**5*Y**5*Z**6 + X**5*Y**4*Z**7 + X**5*Y**3*Z**8 + X**4*Y**8*Z**4 + X**4*Y**7*Z**5 + X**4*Y**6*Z**6 + X**4*Y**5*Z**7 + X**4*Y**4*Z**8 + X**3*Y**8*Z**5 + X**3*Y**7*Z**6 + X**3*Y**6*Z**7 + X**3*Y**5*Z**8 + X**2*Y**8*Z**6 + X**2*Y**7*Z**7 + X**2*Y**6*Z**8 + X*Y**8*Z**7 + X*Y**7*Z**8 + Y**8*Z**8)
+   rad((A-B)(B-C)(C-A)) (factored):  (X - Y)*(X - Z)*(Y - Z)*(X**10 + X**9*Y + X**8*Y**2 + X**7*Y**3 + X**6*Y**4 + X**5*Y**5 + X**4*Y**6 + X**3*Y**7 + X**2*Y**8 + X*Y**9 + Y**10)*(X**10 + X**9*Z + X**8*Z**2 + X**7*Z**3 + X**6*Z**4 + X**5*Z**5 + X**4*Z**6 + X**3*Z**7 + X**2*Z**8 + X*Z**9 + Z**10)*(Y**10 + Y**9*Z + Y**8*Z**2 + Y**7*Z**3 + Y**6*Z**4 + Y**5*Z**5 + Y**4*Z**6 + Y**3*Z**7 + Y**2*Z**8 + Y*Z**9 + Z**10)
+   W (factored):  -1210*X**11*Y**11*Z**11*(X - Y)*(X - Z)*(Y - Z)*(X**8*Y**8 + X**8*Y**7*Z + X**8*Y**6*Z**2 + X**8*Y**5*Z**3 + X**8*Y**4*Z**4 + X**8*Y**3*Z**5 + X**8*Y**2*Z**6 + X**8*Y*Z**7 + X**8*Z**8 + X**7*Y**8*Z + X**7*Y**7*Z**2 + X**7*Y**6*Z**3 + X**7*Y**5*Z**4 + X**7*Y**4*Z**5 + X**7*Y**3*Z**6 + X**7*Y**2*Z**7 + X**7*Y*Z**8 + X**6*Y**8*Z**2 + X**6*Y**7*Z**3 + X**6*Y**6*Z**4 + X**6*Y**5*Z**5 + X**6*Y**4*Z**6 + X**6*Y**3*Z**7 + X**6*Y**2*Z**8 + X**5*Y**8*Z**3 + X**5*Y**7*Z**4 + X**5*Y**6*Z**5 + X**5*Y**5*Z**6 + X**5*Y**4*Z**7 + X**5*Y**3*Z**8 + X**4*Y**8*Z**4 + X**4*Y**7*Z**5 + X**4*Y**6*Z**6 + X**4*Y**5*Z**7 + X**4*Y**4*Z**8 + X**3*Y**8*Z**5 + X**3*Y**7*Z**6 + X**3*Y**6*Z**7 + X**3*Y**5*Z**8 + X**2*Y**8*Z**6 + X**2*Y**7*Z**7 + X**2*Y**6*Z**8 + X*Y**8*Z**7 + X*Y**7*Z**8 + Y**8*Z**8)   deg(W)=52
+   deg(rad) = 33   ->   Mason-Stothers (this symmetric specialisation):  p=11 < deg(rad)=33  :  HOLDS
+   explicit degree identity:  deg(rad) = 33 == 3p = 33  ->  True
+
+DONE probe 1   (86.3s total)

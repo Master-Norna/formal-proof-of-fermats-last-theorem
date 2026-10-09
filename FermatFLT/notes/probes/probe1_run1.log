@@ -1,0 +1,4 @@
+  File "E:\项目\Test\FermatFLT\notes\probes\fermint_probe.py", line 197
+    print(f"p={p}   (t = 1^{2p} + 1^p*2^{2p}+2^{2p} = {t})")
+                            ^
+SyntaxError: invalid decimal literal
