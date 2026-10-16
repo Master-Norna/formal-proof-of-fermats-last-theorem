@@ -7,3 +7,6 @@ _pm.lean
 .yan/wb_defect*.log
 .yan/*.tmp
 *.olean
+share/
+__pycache__/
+*.py[cod]
